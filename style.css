@@ -1,18 +1,40 @@
-:root { --bg: #050505; --text: #ffffff; --silver: #a1a1aa; --accent: #ffffff; }
-body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
+:root {
+    --bg: #050505;
+    --text: #ffffff;
+    --silver: #a1a1aa;
+    --accent: #ffffff;
+}
 
-/* Elegant, non-cluttered navigation */
-nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 5%; }
-.logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; }
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Nav */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 5%; border-bottom: 1px solid #1a1a1a; }
+.logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.25rem; }
 .nav-links { display: flex; gap: 2rem; }
-.nav-links a { color: var(--silver); text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
-.nav-links a:hover { color: var(--text); }
+.nav-links a { color: var(--silver); text-decoration: none; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
 
-/* Premium layout container */
-.container { padding: 5rem 5%; max-width: 1000px; margin: 0 auto; }
+/* Content */
+.container { padding: 4rem 5%; max-width: 900px; margin: 0 auto; }
 h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 2rem; }
-p { font-size: 1.1rem; color: var(--silver); margin-bottom: 1.5rem; }
+p { color: var(--silver); margin-bottom: 1.5rem; }
 
-/* High-end button */
-.btn-main { background: transparent; border: 1px solid var(--text); color: var(--text); padding: 1rem 2rem; text-decoration: none; font-weight: 600; text-transform: uppercase; display: inline-block; transition: 0.3s; }
+/* Buttons */
+.btn-main { 
+    display: inline-block; 
+    border: 1px solid var(--text); 
+    color: var(--text); 
+    padding: 1rem 2rem; 
+    text-decoration: none; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    margin-top: 2rem; 
+    transition: 0.3s;
+}
 .btn-main:hover { background: var(--text); color: #000; }
