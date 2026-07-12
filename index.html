@@ -72,6 +72,8 @@
             text-decoration: none;
             font-weight: 600;
             transition: opacity 0.2s;
+            cursor: pointer;
+            border: none;
         }
         .cta-button:hover { opacity: 0.8; }
 
@@ -109,10 +111,48 @@
             font-size: 0.95rem;
         }
 
+        /* Contact Section */
+        .contact {
+            padding: 6rem 5%;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .contact h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+        .contact p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
+        .contact-info-box {
+            background-color: var(--bg-secondary);
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+        .contact-info-box p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+        .contact-info-box p:last-child {
+            margin-bottom: 0;
+        }
+        .contact-info-box a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
         /* Footer */
         footer {
             text-align: center;
-            padding: 4rem 5%;
+            padding: 2rem 5%;
             border-top: 1px solid #e2e8f0;
             color: var(--text-muted);
             font-size: 0.875rem;
@@ -132,7 +172,7 @@
     <header class="hero">
         <h1>Precision Media & Marketing.</h1>
         <p>Elevating real estate brands in the Denver area through high-end commercial production, dynamic videography, and targeted digital marketing.</p>
-        <a href="#contact" class="cta-button">Book a Shoot</a>
+        <a href="#contact" class="cta-button">Work With Us</a>
     </header>
 
     <section id="services" class="services">
@@ -153,10 +193,20 @@
         </div>
     </section>
 
-    <footer id="contact">
-        <p>Ready to elevate your listings?</p>
-        <p style="margin-top: 1rem; font-weight: 600; color: #000;">Contact us today.</p>
-        <p style="margin-top: 3rem;">&copy; 2026 Mx Market Media LLC. Denver, CO. All rights reserved.</p>
+    <section id="contact" class="contact">
+        <h2>Ready to elevate your listings?</h2>
+        <p>Book a strategy session or reach out directly to discuss your next production.</p>
+        
+        <div class="contact-info-box">
+            <p><strong>Email:</strong> <a href="mailto:matthewfudala10623@gmail.com">matthewfudala10623@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+17207459644">+1 (720) 745-9644</a></p>
+        </div>
+
+        <a href="https://calendly.com/matthewfudala10623/booking" target="_blank" class="cta-button">Schedule a 1-on-1 Zoom Call</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mx Market Media LLC. Denver, CO. All rights reserved.</p>
     </footer>
 
 </body>
