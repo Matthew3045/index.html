@@ -2,350 +2,350 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mx Market Media | Real Estate Media & Digital Marketing</title>
-    <!-- Premium Google Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mx Market Media | Premium Real Estate Production</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --text-main: #090d16;
-            --text-muted: #5e6b7e;
-            --bg-pure: #ffffff;
-            --bg-subtle: #f8fafc;
+            --text-dark: #0a0a0a;
+            --text-light: #ffffff;
+            --text-gray: #64748b;
+            --bg-white: #ffffff;
+            --bg-offwhite: #f8fafc;
+            --bg-black: #0a0a0a;
             --accent: #000000;
-            --border: #e4e8ec;
+            --border-light: #e2e8f0;
+            --border-dark: #333333;
             --font-head: 'Syne', sans-serif;
             --font-body: 'Plus Jakarta Sans', sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
         
         body {
             font-family: var(--font-body);
-            background-color: var(--bg-pure);
-            color: var(--text-main);
-            line-height: 1.7;
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Navigation */
+        /* Sticky High-Converting Nav */
         nav {
-            position: sticky;
+            position: fixed;
+            width: 100%;
             top: 0;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.75rem 5%;
-            border-bottom: 1px solid var(--border);
-            z-index: 100;
+            padding: 1rem 5%;
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
         }
-        .logo { 
-            font-family: var(--font-head);
-            font-size: 1.35rem; 
-            font-weight: 800; 
-            letter-spacing: -0.5px; 
-            text-transform: uppercase;
+        
+        /* Logo Image Styling */
+        .logo-img {
+            height: 48px; /* Perfectly sized for the nav bar */
+            width: auto;
+            object-fit: contain;
+            display: block;
         }
-        .nav-links a {
-            margin-left: 2.5rem;
+        
+        .nav-right { display: flex; align-items: center; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; }
+        @media (hover: hover) { .nav-links a:hover { opacity: 0.6; } }
+        
+        .nav-cta {
+            background-color: var(--bg-black);
+            color: var(--text-light);
+            padding: 0.85rem 1.75rem;
             text-decoration: none;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: color 0.2s ease;
-        }
-        .nav-links a:hover { color: var(--accent); }
-
-        /* Hero Section */
-        .hero {
-            padding: 10rem 5% 8rem 5%;
-            max-width: 1300px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .hero-tag {
-            font-size: 0.85rem;
             font-weight: 700;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s ease;
+        }
+        @media (hover: hover) { .nav-cta:hover { transform: scale(1.05); } }
+
+        /* Direct Response Hero */
+        .hero {
+            padding: 13rem 5% 7rem 5%;
+            text-align: center;
+            background-color: var(--bg-offwhite);
+        }
+        .hero-label {
             display: inline-block;
+            background: rgba(0,0,0,0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
         }
         .hero h1 {
             font-family: var(--font-head);
-            font-size: 4.5rem;
+            font-size: clamp(3rem, 8vw, 5.5rem);
             font-weight: 800;
             line-height: 1.05;
             letter-spacing: -2px;
-            margin-bottom: 2rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 1000px;
+            margin: 0 auto 1.5rem auto;
         }
         .hero p {
-            font-size: 1.3rem;
-            color: var(--text-muted);
-            max-width: 650px;
-            margin: 0 auto 3.5rem auto;
-            font-weight: 400;
+            font-size: clamp(1.1rem, 3vw, 1.35rem);
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
         }
-        .cta-button {
+        
+        .primary-cta {
             display: inline-block;
             background-color: var(--accent);
             color: white;
-            padding: 1.1rem 2.75rem;
-            border-radius: 0px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid var(--accent);
-        }
-        .cta-button:hover {
-            background-color: transparent;
-            color: var(--accent);
-            transform: translateY(-2px);
-        }
-
-        /* Services Section */
-        .services {
-            background-color: var(--bg-subtle);
-            padding: 8rem 5%;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-        .section-header {
-            max-width: 1200px;
-            margin: 0 auto 5rem auto;
-        }
-        .section-header h2 {
-            font-family: var(--font-head);
-            font-size: 2.75rem;
+            padding: 1.25rem 3.5rem;
+            font-size: 1.1rem;
             font-weight: 800;
-            letter-spacing: -1px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
         }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .service-card {
-            background: var(--bg-pure);
-            padding: 4rem 3rem;
-            border: 1px solid var(--border);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
-            border-color: var(--accent);
-        }
-        .service-card-num {
-            font-family: var(--font-head);
-            font-size: 1rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            display: block;
-        }
-        .service-card h3 {
-            font-family: var(--font-head);
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 1.25rem;
-            letter-spacing: -0.5px;
-        }
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
+        @media (hover: hover) { .primary-cta:hover { transform: translateY(-5px); box-shadow: 0 30px 60px rgba(0,0,0,0.25); } }
 
-        /* Featured Media Section Placeholder */
-        .portfolio {
-            padding: 8rem 5%;
+        /* Trust Bar */
+        .trust-bar {
+            padding: 3rem 5%;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            text-align: center;
+            background: var(--bg-white);
+        }
+        .trust-bar p { font-size: 0.85rem; font-weight: 800; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1.5rem; }
+        .logo-grid { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; opacity: 0.3; }
+        .logo-placeholder { font-family: var(--font-head); font-size: 1.25rem; font-weight: 800; }
+
+        /* Services - High Contrast Cards */
+        .services { padding: 8rem 5%; background: var(--bg-white); }
+        .section-title { font-family: var(--font-head); font-size: clamp(2.5rem, 5vw, 3.5rem); text-align: center; margin-bottom: 4rem; letter-spacing: -1px; }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
+        .card {
+            background: var(--bg-offwhite);
+            padding: 4rem 2.5rem;
+            border: 1px solid var(--border-light);
+            transition: all 0.4s ease;
+        }
+        @media (hover: hover) {
+            .card:hover { background: var(--bg-black); color: var(--text-light); transform: translateY(-10px); }
+            .card:hover p, .card:hover .step { color: #a1a1aa; }
+        }
+        .step { font-family: var(--font-head); font-size: 0.9rem; font-weight: 800; margin-bottom: 1.5rem; display: block; color: var(--text-gray); transition: 0.4s; }
+        .card h3 { font-family: var(--font-head); font-size: 1.75rem; margin-bottom: 1rem; line-height: 1.1; letter-spacing: -0.5px; }
+
+        /* Dark Mode Portfolio & Contact */
+        .dark-section {
+            background-color: var(--bg-black);
+            color: var(--text-light);
+            padding: 8rem 5% 6rem 5%;
+        }
+        .dark-section .section-title { color: var(--text-light); }
+        
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto 6rem auto;
         }
-        .media-block {
-            background: var(--bg-subtle);
-            aspect-ratio: 16 / 9;
-            border: 1px solid var(--border);
+        .video-box {
+            background: #111;
+            aspect-ratio: 16/9;
+            border: 1px solid var(--border-dark);
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .media-block:hover {
-            border-color: var(--accent);
-        }
-        .media-block span {
+            color: var(--text-gray);
             font-family: var(--font-head);
             text-transform: uppercase;
+            letter-spacing: 2px;
             font-size: 0.85rem;
-            letter-spacing: 1px;
-            color: var(--text-muted);
         }
 
-        /* Contact Section */
-        .contact {
-            padding: 10rem 5%;
+        /* Ultimate Conversion Footer */
+        .conversion-box {
             text-align: center;
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
+            padding: 5rem 0 2rem 0;
+            border-top: 1px solid var(--border-dark);
         }
-        .contact h2 {
-            font-family: var(--font-head);
-            font-size: 3.5rem;
+        .conversion-box h2 { font-family: var(--font-head); font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 2rem; }
+        .contact-info { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem; }
+        .contact-info a { color: var(--text-light); text-decoration: none; font-size: 1.15rem; font-weight: 600; padding: 0.5rem; }
+        
+        .inverted-cta {
+            display: inline-block;
+            background-color: var(--text-light);
+            color: var(--bg-black);
+            padding: 1.5rem 3rem;
+            font-size: 1.1rem;
             font-weight: 800;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1.5px;
-            line-height: 1.1;
-        }
-        .contact p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 4rem;
-        }
-        .contact-details {
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            margin-bottom: 4rem;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 3rem 0;
-        }
-        .detail-item h4 {
-            font-family: var(--font-head);
-            font-size: 0.85rem;
+            text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
-        }
-        .detail-item a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 700;
-            transition: color 0.2s ease;
-        }
-        .detail-item a:hover { color: var(--text-muted); }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 3rem 5%;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            letter-spacing: 0.3px;
+            margin-bottom: 2rem;
+            width: 100%;
+            max-width: 400px;
         }
 
-        /* Responsive Breakpoints */
-        @media (max-width: 968px) {
-            .hero h1 { font-size: 3rem; }
-            .contact h2 { font-size: 2.5rem; }
-            .portfolio-grid { grid-template-columns: 1fr; }
-            .contact-details { flex-direction: column; gap: 2rem; padding: 2rem 0; }
+        .legal { text-align: center; padding-top: 3rem; color: var(--text-gray); font-size: 0.85rem; }
+
+        /* --- MOBILE iOS OPTIMIZATIONS --- */
+        .mobile-sticky-cta { display: none; }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 5%; }
+            .logo-img { height: 40px; }
+            .nav-links { display: none; }
+            .nav-cta { display: none; } /* Hidden on mobile to make room for bottom bar */
+            
+            .hero { padding: 8rem 5% 5rem 5%; }
+            .services { padding: 5rem 5%; }
+            .dark-section { padding: 5rem 5% 8rem 5%; } /* Extra padding at bottom so CTA doesn't cover content */
+            
+            .trust-bar .logo-grid { gap: 1.5rem; flex-direction: column; }
+            .card { padding: 3rem 2rem; }
+            
+            /* Sticky Mobile Bottom CTA */
+            body { padding-bottom: 80px; } /* Prevent footer from being hidden by the bar */
+            .mobile-sticky-cta {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                padding: 1rem;
+                justify-content: center;
+                z-index: 9999;
+                box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+            }
+            .mobile-sticky-cta a {
+                width: 100%;
+                background: var(--text-light);
+                color: var(--bg-black);
+                text-align: center;
+                padding: 1.1rem;
+                font-weight: 800;
+                text-transform: uppercase;
+                text-decoration: none;
+                letter-spacing: 1px;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Mx Market Media</div>
-        <div class="nav-links">
-            <a href="#services">Services</a>
-            <a href="#work">Featured Work</a>
-            <a href="#contact">Contact</a>
+        <a href="#">
+            <img src="1000187295.png" alt="Mx Market Media Logo" class="logo-img">
+        </a>
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="#services">The System</a>
+                <a href="#work">Showcase</a>
+            </div>
+            <a href="https://calendly.com/matthewfudala10623/booking" target="_blank" class="nav-cta">Book a Shoot</a>
         </div>
     </nav>
 
     <header class="hero">
-        <span class="hero-tag">Denver, Colorado</span>
-        <h1>High-End Media for High-Value Listings.</h1>
-        <p>Elevating real estate brands through precision commercial cinematography, architectural photography, and comprehensive digital marketing strategies.</p>
-        <a href="#contact" class="cta-button">Initialize Production</a>
+        <span class="hero-label">Denver Commercial Production</span>
+        <h1>Stop losing listings to bad media.</h1>
+        <p>We build high-end visual assets that demand attention, elevate your brand, and convert buyers into closed contracts.</p>
+        <a href="https://calendly.com/matthewfudala10623/booking" target="_blank" class="primary-cta">Deploy a Campaign</a>
     </header>
 
+    <div class="trust-bar">
+        <p>Delivering elite media for Denver's top real estate professionals</p>
+        <div class="logo-grid">
+            <span class="logo-placeholder">RE/MAX</span>
+            <span class="logo-placeholder">COMPASS</span>
+            <span class="logo-placeholder">KELLER WILLIAMS</span>
+            <span class="logo-placeholder">COLDWELL BANKER</span>
+        </div>
+    </div>
+
     <section id="services" class="services">
-        <div class="section-header">
-            <h2>Our Capabilities</h2>
-        </div>
-        <div class="grid">
-            <div class="service-card">
-                <span class="service-card-num">01 / CINEMA</span>
-                <h3>Commercial Videography</h3>
-                <p>Fully mastered, high-fidelity video productions and dynamic promotional reels tailored specifically to capture buyer emotion and secure high-intent listings.</p>
+        <h2 class="section-title">The Conversion System</h2>
+        <div class="service-grid">
+            <div class="card">
+                <span class="step">01 / CINEMATICS</span>
+                <h3>High-Fidelity<br>Video Tours</h3>
+                <p>Fully mastered, stabilized 4K production. We don't just record rooms; we craft cinematic narratives that create emotional connections with high-intent buyers.</p>
             </div>
-            <div class="service-card">
-                <span class="service-card-num">02 / IMAGING</span>
-                <h3>Elite Photography</h3>
-                <p>Perfectly composed, magazine-quality architectural interior and exterior photography. Delivered razor-sharp and fully optimized for premium MLS and print media campaigns.</p>
+            <div class="card">
+                <span class="step">02 / IMAGING</span>
+                <h3>Architectural<br>Photography</h3>
+                <p>Magazine-quality interior and exterior captures. Perfectly lit, color-graded, and delivered razor-sharp to make your MLS listings dominate the feed.</p>
             </div>
-            <div class="service-card">
-                <span class="service-card-num">03 / ACQUISITION</span>
-                <h3>Digital Marketing</h3>
-                <p>Data-driven marketing architecture built exclusively for real estate professionals looking to scale their local territory footprint and convert exclusive client leads.</p>
+            <div class="card">
+                <span class="step">03 / DEPLOYMENT</span>
+                <h3>Targeted<br>Marketing</h3>
+                <p>Don't just post and pray. We build data-driven digital marketing architectures designed to push your elite media directly in front of qualified buyers.</p>
             </div>
         </div>
     </section>
 
-    <section id="work" class="portfolio">
-        <div class="section-header">
-            <h2>Showcase Reels</h2>
-        </div>
+    <section id="work" class="dark-section">
+        <h2 class="section-title">Proof of Concept</h2>
         <div class="portfolio-grid">
-            <div class="media-block">
-                <span>[ Cinematic Production Reel ]</span>
-            </div>
-            <div class="media-block">
-                <span>[ Architectural Gallery Showcase ]</span>
-            </div>
+            <div class="video-box">[ Embed Video Reel 1 ]</div>
+            <div class="video-box">[ Embed Video Reel 2 ]</div>
+            <div class="video-box">[ Embed Photo Gallery ]</div>
+            <div class="video-box">[ Embed Case Study ]</div>
         </div>
-    </section>
 
-    <section id="contact" class="contact">
-        <h2>Let's build something elite.</h2>
-        <p>Schedule a production briefing or connect with our office instantly to map out your next asset deployment.</p>
-        
-        <div class="contact-details">
-            <div class="detail-item">
-                <h4>Direct Line</h4>
+        <div class="conversion-box">
+            <h2>Ready to dominate your market?</h2>
+            
+            <div class="contact-info">
                 <a href="tel:+17207459644">+1 (720) 745-9644</a>
-            </div>
-            <div class="detail-item">
-                <h4>Secure Mail</h4>
                 <a href="mailto:matthewfudala10623@gmail.com">matthewfudala10623@gmail.com</a>
             </div>
-        </div>
 
-        <a href="https://calendly.com/matthewfudala10623/booking" target="_blank" class="cta-button">Schedule 1-on-1 Zoom Briefing</a>
+            <a href="https://calendly.com/matthewfudala10623/booking" target="_blank" class="inverted-cta">Lock In Your Shoot Date</a>
+            
+            <p class="legal">&copy; 2026 Mx Market Media LLC. Denver, CO. Built for performance.</p>
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Mx Market Media LLC. All rights reserved.</p>
-    </footer>
+    <!-- Mobile Sticky CTA (Only visible on phones) -->
+    <div class="mobile-sticky-cta">
+        <a href="https://calendly.com/matthewfudala10623/booking" target="_blank">Book a Shoot</a>
+    </div>
 
 </body>
 </html>
