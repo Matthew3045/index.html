@@ -2,350 +2,452 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Mx Market Media | Premium Real Estate Production</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Mx Market Media | Denver Commercial Production</title>
+    
+    <!-- Premium Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
     
     <style>
+        /* Premium Gradient & Monotone Palette */
         :root {
-            --text-dark: #0a0a0a;
-            --text-light: #ffffff;
-            --text-gray: #64748b;
-            --bg-white: #ffffff;
-            --bg-offwhite: #f8fafc;
-            --bg-black: #0a0a0a;
-            --accent: #000000;
-            --border-light: #e2e8f0;
-            --border-dark: #333333;
-            --font-head: 'Syne', sans-serif;
-            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --bg-dark: #050505;
+            --bg-charcoal: #121212;
+            --bg-gray: #1e1e1e;
+            --bg-light: #f4f4f5;
+            --text-pure: #ffffff;
+            --text-silver: #a1a1aa;
+            --text-dark: #09090b;
+            --accent-silver: #d4d4d8;
+            --gradient-dark: linear-gradient(145deg, #050505 0%, #171717 100%);
+            --gradient-silver: linear-gradient(145deg, #f4f4f5 0%, #e4e4e7 100%);
+            --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+            --font-display: 'Syne', sans-serif;
+            --font-body: 'Inter', sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        html { scroll-behavior: smooth; background-color: var(--bg-dark); }
         
         body {
             font-family: var(--font-body);
-            background-color: var(--bg-white);
-            color: var(--text-dark);
+            background-color: var(--bg-dark);
+            color: var(--text-pure);
             line-height: 1.6;
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Sticky High-Converting Nav */
+        /* Glassmorphism Sticky Header */
         nav {
             position: fixed;
             width: 100%;
             top: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 5%;
-            border-bottom: 1px solid var(--border-light);
-            z-index: 1000;
+            padding: 1.25rem 5%;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            z-index: 9999;
         }
         
-        /* Logo Image Styling */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-pure);
+        }
         .logo-img {
-            height: 48px; /* Perfectly sized for the nav bar */
+            max-height: 45px;
             width: auto;
             object-fit: contain;
-            display: block;
         }
-        
-        .nav-right { display: flex; align-items: center; gap: 2rem; }
-        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; }
-        @media (hover: hover) { .nav-links a:hover { opacity: 0.6; } }
+        /* Fallback text if logo fails to load */
+        .logo-fallback {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-right { display: flex; align-items: center; gap: 2.5rem; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--text-silver); 
+            font-weight: 500; 
+            font-size: 0.9rem; 
+            letter-spacing: 0.5px;
+            transition: color 0.3s; 
+        }
+        .nav-links a:hover { color: var(--text-pure); }
         
         .nav-cta {
-            background-color: var(--bg-black);
-            color: var(--text-light);
-            padding: 0.85rem 1.75rem;
+            background: var(--text-pure);
+            color: var(--text-dark);
+            padding: 0.75rem 1.5rem;
+            border-radius: 2px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: transform 0.2s ease;
-        }
-        @media (hover: hover) { .nav-cta:hover { transform: scale(1.05); } }
-
-        /* Direct Response Hero */
-        .hero {
-            padding: 13rem 5% 7rem 5%;
-            text-align: center;
-            background-color: var(--bg-offwhite);
-        }
-        .hero-label {
-            display: inline-block;
-            background: rgba(0,0,0,0.05);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 800;
             letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            color: var(--text-dark);
-        }
-        .hero h1 {
-            font-family: var(--font-head);
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            font-weight: 800;
-            line-height: 1.05;
-            letter-spacing: -2px;
-            max-width: 1000px;
-            margin: 0 auto 1.5rem auto;
-        }
-        .hero p {
-            font-size: clamp(1.1rem, 3vw, 1.35rem);
-            color: var(--text-gray);
-            max-width: 600px;
-            margin: 0 auto 3rem auto;
-        }
-        
-        .primary-cta {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 1.25rem 3.5rem;
-            font-size: 1.1rem;
-            font-weight: 800;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             transition: all 0.3s ease;
         }
-        @media (hover: hover) { .primary-cta:hover { transform: translateY(-5px); box-shadow: 0 30px 60px rgba(0,0,0,0.25); } }
+        .nav-cta:hover { background: var(--accent-silver); transform: translateY(-2px); }
 
-        /* Trust Bar */
-        .trust-bar {
-            padding: 3rem 5%;
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
-            text-align: center;
-            background: var(--bg-white);
+        /* Full Screen Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8rem 5% 4rem 5%;
+            background: var(--gradient-dark);
+            position: relative;
         }
-        .trust-bar p { font-size: 0.85rem; font-weight: 800; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1.5rem; }
-        .logo-grid { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; opacity: 0.3; }
-        .logo-placeholder { font-family: var(--font-head); font-size: 1.25rem; font-weight: 800; }
-
-        /* Services - High Contrast Cards */
-        .services { padding: 8rem 5%; background: var(--bg-white); }
-        .section-title { font-family: var(--font-head); font-size: clamp(2.5rem, 5vw, 3.5rem); text-align: center; margin-bottom: 4rem; letter-spacing: -1px; }
+        /* Subtle mesh gradient overlay */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
         
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+        }
+        
+        .hero-label {
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-silver);
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            font-weight: 800;
+            line-height: 1.15; /* Fixed squishing */
+            letter-spacing: -2px;
+            margin-bottom: 2rem;
+            background: linear-gradient(180deg, #FFFFFF 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            color: var(--text-silver);
+            max-width: 700px;
+            margin-bottom: 3.5rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .primary-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-silver);
+            color: var(--text-dark);
+            padding: 1.25rem 3rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.4s ease;
+        }
+        .primary-cta:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(255,255,255,0.05); }
+
+        /* Infrastructure / Services Page Area */
+        .section-wrapper {
+            padding: 10rem 5%;
+            background: var(--bg-charcoal);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .section-header {
+            margin-bottom: 6rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            letter-spacing: -1px;
+            color: var(--text-pure);
+        }
+
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
-        .card {
-            background: var(--bg-offwhite);
-            padding: 4rem 2.5rem;
-            border: 1px solid var(--border-light);
-            transition: all 0.4s ease;
-        }
-        @media (hover: hover) {
-            .card:hover { background: var(--bg-black); color: var(--text-light); transform: translateY(-10px); }
-            .card:hover p, .card:hover .step { color: #a1a1aa; }
-        }
-        .step { font-family: var(--font-head); font-size: 0.9rem; font-weight: 800; margin-bottom: 1.5rem; display: block; color: var(--text-gray); transition: 0.4s; }
-        .card h3 { font-family: var(--font-head); font-size: 1.75rem; margin-bottom: 1rem; line-height: 1.1; letter-spacing: -0.5px; }
-
-        /* Dark Mode Portfolio & Contact */
-        .dark-section {
-            background-color: var(--bg-black);
-            color: var(--text-light);
-            padding: 8rem 5% 6rem 5%;
-        }
-        .dark-section .section-title { color: var(--text-light); }
         
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto 6rem auto;
+        .card {
+            background: var(--bg-gray);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 4rem 3rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
-        .video-box {
-            background: #111;
-            aspect-ratio: 16/9;
-            border: 1px solid var(--border-dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-gray);
-            font-family: var(--font-head);
-            text-transform: uppercase;
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--gradient-glass);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .card:hover { transform: translateY(-10px); border-color: rgba(255,255,255,0.2); }
+        .card:hover::before { opacity: 1; }
+        
+        .step { 
+            font-family: var(--font-display); 
+            font-size: 0.85rem; 
+            font-weight: 700; 
+            margin-bottom: 2rem; 
+            display: block; 
+            color: var(--text-silver); 
             letter-spacing: 2px;
-            font-size: 0.85rem;
+        }
+        .card h3 { 
+            font-family: var(--font-display); 
+            font-size: 2rem; 
+            margin-bottom: 1.5rem; 
+            line-height: 1.1; 
+            letter-spacing: -0.5px;
+            position: relative;
+        }
+        .card p { 
+            color: var(--text-silver); 
+            font-weight: 300;
+            position: relative;
         }
 
-        /* Ultimate Conversion Footer */
-        .conversion-box {
+        /* Arsenal / Tech Section */
+        .tech-section {
+            padding: 10rem 5%;
+            background: var(--gradient-dark);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        .tech-text h3 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        .tech-text p { color: var(--text-silver); margin-bottom: 1rem; font-weight: 300; }
+        
+        .tech-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            background: rgba(255,255,255,0.02);
+            padding: 3rem;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .stat-item h4 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .stat-item p { color: var(--text-silver); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Final Contact CTA */
+        .contact-section {
+            padding: 12rem 5%;
             text-align: center;
+            background: var(--bg-charcoal);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .contact-box {
             max-width: 800px;
             margin: 0 auto;
-            padding: 5rem 0 2rem 0;
-            border-top: 1px solid var(--border-dark);
         }
-        .conversion-box h2 { font-family: var(--font-head); font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 2rem; }
-        .contact-info { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem; }
-        .contact-info a { color: var(--text-light); text-decoration: none; font-size: 1.15rem; font-weight: 600; padding: 0.5rem; }
-        
-        .inverted-cta {
-            display: inline-block;
-            background-color: var(--text-light);
-            color: var(--bg-black);
-            padding: 1.5rem 3rem;
-            font-size: 1.1rem;
-            font-weight: 800;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .contact-box h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
             margin-bottom: 2rem;
-            width: 100%;
-            max-width: 400px;
+        }
+        .contact-box p {
+            color: var(--text-silver);
+            font-size: 1.25rem;
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+        .contact-links a {
+            color: var(--text-pure);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            transition: border-color 0.3s;
+        }
+        .contact-links a:hover { border-color: var(--text-pure); }
+
+        footer {
+            text-align: center;
+            padding: 3rem 5%;
+            color: #52525b;
+            font-size: 0.85rem;
+            background: var(--bg-dark);
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
-        .legal { text-align: center; padding-top: 3rem; color: var(--text-gray); font-size: 0.85rem; }
-
-        /* --- MOBILE iOS OPTIMIZATIONS --- */
-        .mobile-sticky-cta { display: none; }
-
+        /* Mobile Specific Overrides */
         @media (max-width: 768px) {
             nav { padding: 1rem 5%; }
-            .logo-img { height: 40px; }
-            .nav-links { display: none; }
-            .nav-cta { display: none; } /* Hidden on mobile to make room for bottom bar */
+            .nav-links { display: none; } /* Hide text links on mobile */
             
-            .hero { padding: 8rem 5% 5rem 5%; }
-            .services { padding: 5rem 5%; }
-            .dark-section { padding: 5rem 5% 8rem 5%; } /* Extra padding at bottom so CTA doesn't cover content */
+            .tech-grid { grid-template-columns: 1fr; }
+            .tech-stats { grid-template-columns: 1fr; padding: 2rem; }
             
-            .trust-bar .logo-grid { gap: 1.5rem; flex-direction: column; }
-            .card { padding: 3rem 2rem; }
+            .contact-links { flex-direction: column; gap: 1.5rem; }
+            .primary-cta { width: 100%; text-align: center; }
             
-            /* Sticky Mobile Bottom CTA */
-            body { padding-bottom: 80px; } /* Prevent footer from being hidden by the bar */
-            .mobile-sticky-cta {
-                display: flex;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                background: rgba(10, 10, 10, 0.95);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-                padding: 1rem;
-                justify-content: center;
-                z-index: 9999;
-                box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
-            }
-            .mobile-sticky-cta a {
-                width: 100%;
-                background: var(--text-light);
-                color: var(--bg-black);
-                text-align: center;
-                padding: 1.1rem;
-                font-weight: 800;
-                text-transform: uppercase;
-                text-decoration: none;
-                letter-spacing: 1px;
-                font-size: 1rem;
-            }
+            /* Remove the bottom safe area padding since we killed the bottom bar */
+            body { padding-bottom: 0; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Top Navigation -->
     <nav>
-        <a href="#">
-            <img src="1000187295.png" alt="Mx Market Media Logo" class="logo-img">
+        <a href="#" class="logo-container">
+            <!-- The code looks for your image. If it breaks, it falls back to the text span -->
+            <img src="1000187295.png" alt="Mx Market Media" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span class="logo-fallback" style="display: none;">MX MARKET MEDIA</span>
         </a>
         <div class="nav-right">
             <div class="nav-links">
-                <a href="#services">The System</a>
-                <a href="#work">Showcase</a>
+                <a href="#services">Services</a>
+                <a href="#tech">Production</a>
+                <a href="#contact">Contact</a>
             </div>
-            <a href="https://calendly.com/matthewfudala10623/booking" target="_blank" class="nav-cta">Book a Shoot</a>
+            <a href="https://calendly.com/matthewfudala10623/booking" target="_blank" class="nav-cta">Schedule Strategy Call</a>
         </div>
     </nav>
 
+    <!-- Homepage Hero -->
     <header class="hero">
-        <span class="hero-label">Denver Commercial Production</span>
-        <h1>Stop losing listings to bad media.</h1>
-        <p>We build high-end visual assets that demand attention, elevate your brand, and convert buyers into closed contracts.</p>
-        <a href="https://calendly.com/matthewfudala10623/booking" target="_blank" class="primary-cta">Deploy a Campaign</a>
+        <div class="hero-content">
+            <span class="hero-label">Denver Commercial Media Agency</span>
+            <h1>Outclass the<br>competition.</h1>
+            <p>We engineer elite visual architectures. From precision videography to architectural imaging, we build the assets that secure high-value contracts.</p>
+            <a href="https://calendly.com/matthewfudala10623/booking" target="_blank" class="primary-cta">Schedule a Strategy Call</a>
+        </div>
     </header>
 
-    <div class="trust-bar">
-        <p>Delivering elite media for Denver's top real estate professionals</p>
-        <div class="logo-grid">
-            <span class="logo-placeholder">RE/MAX</span>
-            <span class="logo-placeholder">COMPASS</span>
-            <span class="logo-placeholder">KELLER WILLIAMS</span>
-            <span class="logo-placeholder">COLDWELL BANKER</span>
+    <!-- Services Page Area -->
+    <section id="services" class="section-wrapper">
+        <div class="section-header">
+            <h2>The Deployment Framework</h2>
         </div>
-    </div>
-
-    <section id="services" class="services">
-        <h2 class="section-title">The Conversion System</h2>
         <div class="service-grid">
             <div class="card">
-                <span class="step">01 / CINEMATICS</span>
-                <h3>High-Fidelity<br>Video Tours</h3>
-                <p>Fully mastered, stabilized 4K production. We don't just record rooms; we craft cinematic narratives that create emotional connections with high-intent buyers.</p>
+                <span class="step">01 // ACQUISITION</span>
+                <h3>High-Fidelity<br>Cinematics</h3>
+                <p>Fully stabilized 4K production. We bypass standard room walkthroughs to craft immersive narratives that establish an immediate emotional anchor with premium buyers.</p>
             </div>
             <div class="card">
-                <span class="step">02 / IMAGING</span>
+                <span class="step">02 // IMAGING</span>
                 <h3>Architectural<br>Photography</h3>
-                <p>Magazine-quality interior and exterior captures. Perfectly lit, color-graded, and delivered razor-sharp to make your MLS listings dominate the feed.</p>
+                <p>Magazine-grade captures utilizing advanced exposure blending. Delivered razor-sharp, perfectly lit, and meticulously formatted to dominate MLS feeds and print.</p>
             </div>
             <div class="card">
-                <span class="step">03 / DEPLOYMENT</span>
+                <span class="step">03 // DISTRIBUTION</span>
                 <h3>Targeted<br>Marketing</h3>
-                <p>Don't just post and pray. We build data-driven digital marketing architectures designed to push your elite media directly in front of qualified buyers.</p>
+                <p>Strategic deployment. We construct dedicated digital marketing pathways designed to push your elite media directly to qualified, high-intent local demographics.</p>
             </div>
         </div>
     </section>
 
-    <section id="work" class="dark-section">
-        <h2 class="section-title">Proof of Concept</h2>
-        <div class="portfolio-grid">
-            <div class="video-box">[ Embed Video Reel 1 ]</div>
-            <div class="video-box">[ Embed Video Reel 2 ]</div>
-            <div class="video-box">[ Embed Photo Gallery ]</div>
-            <div class="video-box">[ Embed Case Study ]</div>
+    <!-- Tech/Production Page Area -->
+    <section id="tech" class="tech-section">
+        <div class="tech-grid">
+            <div class="tech-text">
+                <h3>Built on premium infrastructure.</h3>
+                <p>Professional results require professional hardware. We operate a dual-ecosystem acquisition setup, leveraging the precision of Sony Alpha full-frame sensors and Canon EOS color science.</p>
+                <p>Coupled with fast f/1.4 manual cine lenses and heavy-duty localized rendering, our pipeline is built for zero compromises from capture to delivery.</p>
+            </div>
+            <div class="tech-stats">
+                <div class="stat-item">
+                    <h4>4K 10-Bit</h4>
+                    <p>Acquisition</p>
+                </div>
+                <div class="stat-item">
+                    <h4>DaVinci</h4>
+                    <p>Cinema Color Grading</p>
+                </div>
+                <div class="stat-item">
+                    <h4>f/1.4</h4>
+                    <p>Optical Depth</p>
+                </div>
+                <div class="stat-item">
+                    <h4>Log</h4>
+                    <p>Dynamic Range</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="conversion-box">
-            <h2>Ready to dominate your market?</h2>
+    <!-- Contact Page Area -->
+    <section id="contact" class="contact-section">
+        <div class="contact-box">
+            <h2>Initiate a project.</h2>
+            <p>Schedule a comprehensive consultation to discuss client targets, project scope, and deployment timelines for your next listing.</p>
             
-            <div class="contact-info">
+            <div class="contact-links">
                 <a href="tel:+17207459644">+1 (720) 745-9644</a>
                 <a href="mailto:matthewfudala10623@gmail.com">matthewfudala10623@gmail.com</a>
             </div>
 
-            <a href="https://calendly.com/matthewfudala10623/booking" target="_blank" class="inverted-cta">Lock In Your Shoot Date</a>
-            
-            <p class="legal">&copy; 2026 Mx Market Media LLC. Denver, CO. Built for performance.</p>
+            <a href="https://calendly.com/matthewfudala10623/booking" target="_blank" class="primary-cta">Schedule a Strategy Call</a>
         </div>
     </section>
 
-    <!-- Mobile Sticky CTA (Only visible on phones) -->
-    <div class="mobile-sticky-cta">
-        <a href="https://calendly.com/matthewfudala10623/booking" target="_blank">Book a Shoot</a>
-    </div>
+    <footer>
+        <p>&copy; 2026 Mx Market Media LLC. Denver, CO. All systems operational.</p>
+    </footer>
 
 </body>
 </html>
