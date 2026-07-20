@@ -2,104 +2,130 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MX Market Media LLC</title>
-  <!-- Main CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Meta Tags -->
+  <title>MX Market Media | Denver Real Estate & Automotive Photography</title>
+  <meta name="description" content="Premium photography, videography, and digital marketing in Denver, CO. Specializing in real estate property tours, automotive media, and events.">
+  <meta name="keywords" content="Denver real estate photography, automotive videography, drone property tours, Colorado media agency, MX Market Media">
+  <meta property="og:title" content="MX Market Media | Premium Visuals">
+  <meta property="og:description" content="Bringing your vision to life through high-quality photo and video in Denver, Colorado.">
+  <meta property="og:type" content="website">
+  
+  <!-- CSS Links -->
   <link rel="stylesheet" href="style.css">
-  <!-- AOS CSS for animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- Calendly widget -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
+
   <!-- Navigation -->
   <nav>
-    <div class="logo"><a href="#hero"><img src="images/logo.png" alt="MX Market Media Logo"></a></div>
+    <div class="logo">
+      <a href="#hero"><img src="images/logo.png" alt="MX Market Media Logo"></a>
+    </div>
     <div class="nav-links">
       <a href="#hero">Home</a>
       <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#gear">Gear</a>
       <a href="#portfolio">Portfolio</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
-  <!-- Hero Section with Video Background -->
-  <section id="hero">
+  <!-- Hero Header -->
+  <header id="hero">
     <video class="video-bg" autoplay muted loop playsinline>
       <source src="images/hero-video.mp4" type="video/mp4">
-      <!-- Fallback to poster image -->
     </video>
+    <div class="hero-overlay"></div>
+    
     <div class="hero-content" data-aos="fade-up">
       <h1>Your Vision. Our Lens.</h1>
-      <p>Premium Photography, Videography & Marketing for Real Estate, Automotive, Events & More.</p>
-      <button class="btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/matthewfudala10623/booking'});return false;">Schedule a Call</button>
+      <p>Premium Photography, Videography & Marketing for Real Estate, Automotive & Events.</p>
+      <a href="https://calendly.com/matthewfudala10623/booking" target="_blank" rel="noopener noreferrer" class="btn">
+        SCHEDULE A CALL
+      </a>
     </div>
-  </section>
+  </header>
 
-  <!-- Services -->
+  <!-- Services (Interactive Gateways) -->
   <section id="services">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">Our Services</h2>
-      <div class="services-grid">
-        <div class="service-item" data-aos="fade-up" onclick="document.querySelector('#contact button').click()">
-          <img src="images/real-estate.jpg" alt="Real Estate Media">
-          <h3>Real Estate</h3>
-          <p>Stunning property photography & tours to sell faster.</p>
-        </div>
-        <div class="service-item" data-aos="fade-up" onclick="document.querySelector('#contact button').click()">
-          <img src="images/cars.jpg" alt="Car Media">
-          <h3>Cars</h3>
-          <p>Dynamic automotive shoots & motorsport edits.</p>
-        </div>
-        <div class="service-item" data-aos="fade-up" onclick="document.querySelector('#contact button').click()">
-          <img src="images/events.jpg" alt="Event Coverage">
-          <h3>Events</h3>
-          <p>Event photography & highlight reels to capture every moment.</p>
-        </div>
-        <div class="service-item" data-aos="fade-up" onclick="document.querySelector('#contact button').click()">
-          <img src="images/marketing.jpg" alt="Marketing">
-          <h3>Marketing</h3>
-          <p>Data-driven Google & Meta campaigns to grow your audience.</p>
-        </div>
+      <div class="services-grid" data-aos="fade-up">
+        
+        <a href="#portfolio" class="service-item real-estate" onclick="filterSelection('real-estate')">
+          <div class="card-overlay">
+            <h3>Real Estate</h3>
+            <p>Stunning property photography & tours to sell faster.</p>
+            <span class="card-link">View Work &rarr;</span>
+          </div>
+        </a>
+
+        <a href="#portfolio" class="service-item automotive" onclick="filterSelection('automotive')">
+          <div class="card-overlay">
+            <h3>Automotive</h3>
+            <p>Dynamic automotive shoots & motorsport edits.</p>
+            <span class="card-link">View Work &rarr;</span>
+          </div>
+        </a>
+
+        <a href="#portfolio" class="service-item events" onclick="filterSelection('events')">
+          <div class="card-overlay">
+            <h3>Events & Marketing</h3>
+            <p>Event coverage & data-driven ad campaigns.</p>
+            <span class="card-link">View Work &rarr;</span>
+          </div>
+        </a>
+
       </div>
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about">
-    <div class="container" data-aos="fade-up">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <p>Hi, I’m Matthew—a solo creator in Denver. Young, passionate, and personally invested in bringing your vision to life. You’ll get my undivided attention and trust, and if extra expertise is needed, I partner with the best to ensure top-tier results.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gear -->
-  <section id="gear">
-    <div class="container" data-aos="fade-up">
-      <h2 class="section-title">Our Gear</h2>
-      <ul class="gear-list">
-        <li><strong>Drone:</strong> DJI Air 2S & RS4 Pro w/LiDAR autofocus</li>
-        <li><strong>Lighting:</strong> Softboxes & kits</li>
-        <li><strong>Audio:</strong> DJI Mic 3</li>
-        <li><strong>Cameras:</strong> Sony Alpha 7 IV & Canon EOS R5</li>
-        <li><strong>Post:</strong> DaVinci Resolve Studio</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Portfolio -->
+  <!-- Dynamic Filter Portfolio -->
   <section id="portfolio">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Portfolio Highlights</h2>
-      <div class="portfolio-grid">
-        <img data-aos="zoom-in" src="images/portfolio1.jpg" alt="Project 1">
-        <img data-aos="zoom-in" src="images/portfolio2.jpg" alt="Project 2">
-        <img data-aos="zoom-in" src="images/portfolio3.jpg" alt="Project 3">
-        <img data-aos="zoom-in" src="images/portfolio4.jpg" alt="Project 4">
+      <h2 class="section-title" data-aos="fade-up">Featured Work</h2>
+      
+      <!-- Filter Buttons -->
+      <div id="filter-btn-container" data-aos="fade-up">
+        <button class="filter-btn active" onclick="filterSelection('all')">Show All</button>
+        <button class="filter-btn" onclick="filterSelection('real-estate')">Real Estate</button>
+        <button class="filter-btn" onclick="filterSelection('automotive')">Automotive</button>
+        <button class="filter-btn" onclick="filterSelection('events')">Events</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="portfolio-grid" data-aos="fade-up">
+        <div class="filter-item real-estate">
+          <img src="images/portfolio1.jpg" alt="Real Estate Exterior">
+        </div>
+        <div class="filter-item automotive">
+          <img src="images/portfolio2.jpg" alt="Automotive Roller">
+        </div>
+        <div class="filter-item real-estate">
+          <img src="images/portfolio3.jpg" alt="Real Estate Interior">
+        </div>
+        <div class="filter-item events">
+          <img src="images/portfolio4.jpg" alt="Event Coverage">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Gear -->
+  <section id="about">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">About Me & The Gear</h2>
+      <div class="about-content">
+        <p>Hi, I'm Matthew—a 19-year-old solo creator based in Denver, Colorado. I am personally invested in bringing your vision to life through high-quality media, whether that means capturing a property layout or hanging out the back of a truck for a roller shot.</p>
+        
+        <ul class="gear-list" style="margin-top: 2rem;">
+          <li><strong>Cameras:</strong> Sony Alpha 7 IV & Canon EOS R50</li>
+          <li><strong>Drone:</strong> DJI Air 2S & RS4 Pro w/LiDAR</li>
+          <li><strong>Audio/Lighting:</strong> DJI Mic 2 & Softbox Kits</li>
+          <li><strong>Post:</strong> DaVinci Resolve Studio</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -107,9 +133,11 @@
   <!-- Contact -->
   <section id="contact">
     <div class="container" data-aos="fade-up">
-      <h2 class="section-title">Schedule Your Call</h2>
-      <p>Ready to get started? Let’s chat over Zoom—no pressure, just a quick conversation.</p>
-      <button class="btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/matthewfudala10623/booking'});return false;">Book Now</button>
+      <h2 class="section-title">Ready to get started?</h2>
+      <p>Let's chat over Zoom—no pressure, just a quick conversation about your media needs.</p>
+      <a href="https://calendly.com/matthewfudala10623/booking" target="_blank" rel="noopener noreferrer" class="btn">
+        BOOK YOUR ZOOM CALL
+      </a>
     </div>
   </section>
 
@@ -119,8 +147,53 @@
     <p><a href="mailto:hello@mxmarketmedia.com">hello@mxmarketmedia.com</a></p>
   </footer>
 
-  <!-- AOS Script -->
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script> AOS.init({ once: true, duration: 1000 }); </script>
+  <script>
+    // Initialize Scroll Animations
+    AOS.init({ duration: 800, once: true, offset: 100 });
+
+    // Dynamic Portfolio Filtering Logic
+    filterSelection("all")
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("filter-item");
+      if (c == "all") c = "";
+      for (i = 0; i < x.length; i++) {
+        RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+      }
+      // Highlight active button
+      var btns = document.getElementsByClassName("filter-btn");
+      for (i = 0; i < btns.length; i++) {
+        btns[i].className = btns[i].className.replace(" active", "");
+        if(btns[i].getAttribute("onclick").includes(c || 'all')) {
+            btns[i].className += " active";
+        }
+      }
+    }
+
+    function AddClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+      }
+    }
+
+    function RemoveClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);     
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+  </script>
 </body>
 </html>
+
