@@ -5,12 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MX Market Media LLC</title>
   <link rel="stylesheet" href="style.css">
+  <!-- AOS Animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- GLightbox for lightbox modal -->
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+  <!-- Calendly widget -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
+  <!-- Nav: glassmorphism + sticky -->
   <nav>
-    <div class="logo"><a href="#hero"><img src="images/logo.png" alt="MX Market Media"></a></div>
+    <div class="logo"><a href="#hero"><img src="images/logo.png" alt="MX Market Media Logo"></a></div>
     <div class="nav-links">
       <a href="#hero">Home</a>
       <a href="#services">Services</a>
@@ -21,16 +26,19 @@
     </div>
   </nav>
 
+  <!-- Hero with video bg -->
   <section id="hero">
-    <video class="video-bg" autoplay muted loop poster="images/hero.jpg">
+    <video class="video-bg" autoplay muted loop playsinline poster="images/hero.jpg">
       <source src="images/hero-video.mp4" type="video/mp4">
     </video>
     <div class="hero-content" data-aos="fade-up">
       <h1>Your Vision, Our Lens</h1>
+      <p>Premium Photo • Video • Marketing</p>
       <button class="btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/matthewfudala10623/booking'});return false;">Schedule a Call</button>
     </div>
   </section>
 
+  <!-- Services Section -->
   <section id="services">
     <div class="container">
       <h2 class="section-title" data-aos="fade-down">Our Services</h2>
@@ -59,6 +67,7 @@
     </div>
   </section>
 
+  <!-- About Section -->
   <section id="about">
     <div class="container" data-aos="fade-up">
       <h2 class="section-title">About Me</h2>
@@ -66,6 +75,7 @@
     </div>
   </section>
 
+  <!-- Gear Section -->
   <section id="gear">
     <div class="container" data-aos="fade-up">
       <h2 class="section-title">Our Gear</h2>
@@ -79,33 +89,41 @@
     </div>
   </section>
 
+  <!-- Portfolio Section (interactive lightbox) -->
   <section id="portfolio">
     <div class="container">
       <h2 class="section-title" data-aos="fade-down">Portfolio Highlights</h2>
       <div class="portfolio-grid">
-        <img data-aos="flip-left" src="images/portfolio1.jpg" alt="Project 1">
-        <img data-aos="flip-left" src="images/portfolio2.jpg" alt="Project 2">
-        <img data-aos="flip-left" src="images/portfolio3.jpg" alt="Project 3">
-        <img data-aos="flip-left" src="images/portfolio4.jpg" alt="Project 4">
+        <a href="images/portfolio1.jpg" class="glightbox" data-gallery="portfolio"><img data-aos="flip-left" src="images/portfolio1.jpg" alt="Project 1"></a>
+        <a href="images/portfolio2.jpg" class="glightbox" data-gallery="portfolio"><img data-aos="flip-left" src="images/portfolio2.jpg" alt="Project 2"></a>
+        <a href="images/portfolio3.jpg" class="glightbox" data-gallery="portfolio"><img data-aos="flip-left" src="images/portfolio3.jpg" alt="Project 3"></a>
+        <a href="images/portfolio4.jpg" class="glightbox" data-gallery="portfolio"><img data-aos="flip-left" src="images/portfolio4.jpg" alt="Project 4"></a>
       </div>
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact">
     <div class="container" data-aos="fade-up">
       <h2 class="section-title">Schedule Your Call</h2>
-      <p>Let’s chat over Zoom—no pressure, just a quick conversation to get started.</p>
+      <p>Let’s chat over Zoom—no pressure, just a quick conversation to discuss your needs.</p>
       <button class="btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/matthewfudala10623/booking'});return false;">Book Now</button>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer data-aos="fade-up">
     <p>&copy; 2026 MX Market Media LLC | Denver, CO</p>
     <p><a href="mailto:hello@mxmarketmedia.com">hello@mxmarketmedia.com</a></p>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script src="https://assets.calendly.com/assets/external/widget.js"></script>
-  <script>AOS.init({ once: true, duration: 900, offset: 50 });</script>
+  <script>
+    AOS.init({ once: true, duration: 900, offset: 50 });
+    const lightbox = GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true });
+  </script>
 </body>
 </html>
