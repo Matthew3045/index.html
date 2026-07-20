@@ -5,18 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MX Market Media LLC</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Calendly widget -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
 </head>
 <body>
   <!-- Nav -->
   <nav>
-    <div class="logo"><img src="images/logo.png" alt="MX Market Media Logo"></div>
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="MX Market Media Logo"></a>
+    </div>
     <div class="nav-links">
-      <a href="#hero">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#gear">Gear</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="gear.html">Gear</a>
     </div>
   </nav>
 
@@ -24,7 +27,7 @@
   <section id="hero">
     <h1>Elevate Your Brand with Premium Media</h1>
     <p>Photography, Videography & Marketing for Real Estate, Automotive, Events & Ads</p>
-    <a href="#contact" class="btn">Book a Zoom Call</a>
+    <button class="btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/matthewfudalla10623/booking?month=2026-07'});return false;">Book a Zoom Call</button>
   </section>
 
   <!-- Services -->
@@ -62,7 +65,7 @@
       <h2 class="section-title">About Us</h2>
       <div class="about-content">
         <p>Founded by Matthew Fudalla in Denver, Colorado, MX Market Media is a full-service production & marketing studio specializing in premium visuals and data-driven ad campaigns.</p>
-        <p>Our gear: DJI Air 2S & RS4 Pro with LiDAR autofocus, softboxes & lighting kits, DJI Mic 3, Sony Alpha 7 IV, Canon EOS R5, plus pro-grade post in DaVinci Resolve Studio.</p>
+        <p>Our gear: DJI Air 2S & RS4 Pro with LiDAR autofocus, lighting kits & softboxes, DJI Mic 3, Sony Alpha 7 IV, Canon EOS R5, plus pro-grade post in DaVinci Resolve Studio.</p>
       </div>
     </div>
   </section>
@@ -72,7 +75,7 @@
     <div class="container">
       <h2 class="section-title">Our Gear</h2>
       <ul class="gear-list">
-        <li><strong>Drone:</strong> DJI Air 2S & RS4 Pro combo with LiDAR autofocus</li>
+        <li><strong>Drone:</strong> DJI Air 2S & RS4 Pro w/ LiDAR autofocus</li>
         <li><strong>Lighting:</strong> Softboxes & lighting kits</li>
         <li><strong>Audio:</strong> DJI Mic 3</li>
         <li><strong>Cameras:</strong> Sony Alpha 7 IV & Canon EOS R5</li>
@@ -94,18 +97,9 @@
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Schedule Your Call</h2>
-      <p>Book a quick Zoom meeting to discuss your vision & next steps.</p>
-      <a href="#" class="btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/matthewfudalla10623/booking?month=2026-07'});return false;">Book Now</a>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer>
-    <p>&copy; 2023 MX Market Media LLC | Denver, CO</p>
+    <p>&copy; 2026 MX Market Media LLC | Denver, CO</p>
     <p><a href="mailto:hello@mxmarketmedia.com">hello@mxmarketmedia.com</a></p>
   </footer>
 </body>
