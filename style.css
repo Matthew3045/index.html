@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;800&display=swap');
 :root {
   --bg: #050505;
   --text: #F5F5F5;
   --accent: #FFD700;
   --silver: #A1A1AA;
-  --primary-font: 'Inter', sans-serif;
+  --primary-font: 'Syne', sans-serif;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --shadow: rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -28,7 +31,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(5,5,5,0.9);
+  background: rgba(5,5,5,0.85);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,7 +43,7 @@ nav .logo img {
 }
 nav .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 nav .nav-links a {
   color: var(--text);
@@ -65,10 +68,11 @@ nav .nav-links a:hover {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
 }
 .btn:hover {
-  opacity: 0.8;
+  opacity: 0.85;
+  transform: translateY(-2px);
 }
 
 /* Section titles */
@@ -76,6 +80,7 @@ nav .nav-links a:hover {
   text-align: center;
   font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 1rem;
+  font-weight: 800;
 }
 
 /* Containers */
@@ -96,26 +101,27 @@ nav .nav-links a:hover {
   text-align: center;
   color: var(--text);
   padding: 0 2rem;
+  position: relative;
+}
+#hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+#hero h1, #hero p, #hero .btn {
+  position: relative;
+  z-index: 1;
 }
 #hero h1 {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   margin-bottom: 1rem;
+  letter-spacing: 1px;
 }
 #hero p {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   color: var(--silver);
   margin-bottom: 2rem;
-}
-
-/* About Section */
-#about .about-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-#about .about-content p {
-  color: var(--silver);
-  font-size: 1rem;
 }
 
 /* Services Section */
@@ -125,18 +131,40 @@ nav .nav-links a:hover {
   gap: 2rem;
   margin-top: 2rem;
 }
-#services .service-item img {
-  width: 100%;
+.service-item {
+  background: var(--bg-card);
+  padding: 1rem;
   border-radius: 8px;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px var(--shadow);
+}
+.service-item img {
+  width: 100%;
+  border-radius: 6px;
   display: block;
 }
-#services .service-item h3 {
+.service-item h3 {
   margin-top: 0.75rem;
   font-size: 1.25rem;
 }
-#services .service-item p {
+.service-item p {
   color: var(--silver);
   margin: 0.5rem 0 1rem;
+}
+
+/* About Section */
+#about .about-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+#about .about-content p {
+  color: var(--silver);
+  font-size: 1rem;
 }
 
 /* Gear Section */
@@ -145,10 +173,14 @@ nav .nav-links a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
+  margin-top: 2rem;
 }
 #gear .gear-list li {
+  background: var(--bg-card);
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px var(--shadow);
   color: var(--silver);
-  font-size: 1rem;
 }
 
 /* Portfolio Section */
@@ -162,6 +194,7 @@ nav .nav-links a:hover {
   width: 100%;
   border-radius: 6px;
   display: block;
+  box-shadow: 0 4px 10px var(--shadow);
 }
 
 /* Contact Section */
@@ -188,4 +221,18 @@ footer p {
   color: var(--silver);
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  nav .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
 }
