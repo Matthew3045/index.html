@@ -2,50 +2,111 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MX Market Media | Premium Media</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MX Market Media LLC</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
   <nav>
-    <div class="logo"><a href="index.html"><img src="images/logo.png" alt="MX Market Media"></a></div>
+    <div class="logo"><a href="#hero"><img src="images/logo.png" alt="MX Market Media"></a></div>
     <div class="nav-links">
-      <a href="index.html#services">Services</a>
+      <a href="#hero">Home</a>
+      <a href="#services">Services</a>
       <a href="#about">About</a>
-      <a href="https://calendly.com/matthewfudala10623/booking" class="nav-btn">Get Started</a>
+      <a href="#gear">Gear</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
     </div>
   </nav>
 
   <section id="hero">
-    <video class="video-bg" autoplay muted loop playsinline>
+    <video class="video-bg" autoplay muted loop poster="images/hero.jpg">
       <source src="images/hero-video.mp4" type="video/mp4">
     </video>
-    <div class="hero-content">
-      <h1>Your Vision. Our Lens.</h1>
-      <p>Premium Photography, Videography & Marketing.</p>
-      <a href="https://calendly.com/matthewfudala10623/booking" target="_blank" class="btn">Schedule a Discovery Call</a>
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Your Vision, Our Lens</h1>
+      <p>Premium Photo • Video • Marketing</p>
+      <button class="btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/matthewfudala10623/booking'});return false;">Schedule a Call</button>
     </div>
   </section>
 
   <section id="services">
-    <h2 class="section-title">Specialized Media Solutions</h2>
-    <div class="services-grid">
-      <a href="real-estate.html" class="service-item"><h3>Real Estate</h3></a>
-      <a href="automotive.html" class="service-item"><h3>Automotive</h3></a>
-      <a href="events.html" class="service-item"><h3>Events</h3></a>
-      <a href="marketing.html" class="service-item"><h3>Marketing</h3></a>
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-down">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-item" data-aos="zoom-in" onclick="document.querySelector('#contact .btn').click()">
+          <img src="images/real-estate.jpg" alt="Real Estate">
+          <h3>Real Estate</h3>
+          <p>Stunning property photography & tours to sell faster.</p>
+        </div>
+        <div class="service-item" data-aos="zoom-in" onclick="document.querySelector('#contact .btn').click()">
+          <img src="images/cars.jpg" alt="Car Media">
+          <h3>Cars</h3>
+          <p>Dynamic automotive shoots & motorsport edits.</p>
+        </div>
+        <div class="service-item" data-aos="zoom-in" onclick="document.querySelector('#contact .btn').click()">
+          <img src="images/events.jpg" alt="Events">
+          <h3>Events</h3>
+          <p>Memorable event photography & highlight reels.</p>
+        </div>
+        <div class="service-item" data-aos="zoom-in" onclick="document.querySelector('#contact .btn').click()">
+          <img src="images/marketing.jpg" alt="Marketing">
+          <h3>Marketing</h3>
+          <p>Data-driven campaigns to grow your audience.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="about">
-    <div class="container">
-      <h2>The Story Behind the Lens</h2>
-      <p>I believe every property, engine, and brand has a soul. At 19, I started MX Market Media in Denver not just to take photos, but to tell stories that stop people from scrolling. I pour my obsession for technical perfection into every frame to bring your vision to life.</p>
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">About Me</h2>
+      <p>Hi, I’m Matthew—a solo creator in Denver. Young, passionate, and fully invested in bringing your vision to life. You’ll get my undivided attention and trust, and if I need extra expertise, I partner with the best to deliver premium results.</p>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2026 MX Market Media | Denver, CO</p>
+  <section id="gear">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">Our Gear</h2>
+      <ul class="gear-list">
+        <li><strong>Drone:</strong> DJI Air 2S & RS4 Pro w/LiDAR</li>
+        <li><strong>Lighting:</strong> Softboxes & kits</li>
+        <li><strong>Audio:</strong> DJI Mic 3</li>
+        <li><strong>Cameras:</strong> Sony Alpha 7 IV & Canon EOS R5</li>
+        <li><strong>Post:</strong> DaVinci Resolve Studio</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-down">Portfolio Highlights</h2>
+      <div class="portfolio-grid">
+        <img data-aos="flip-left" src="images/portfolio1.jpg" alt="Project 1">
+        <img data-aos="flip-left" src="images/portfolio2.jpg" alt="Project 2">
+        <img data-aos="flip-left" src="images/portfolio3.jpg" alt="Project 3">
+        <img data-aos="flip-left" src="images/portfolio4.jpg" alt="Project 4">
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">Schedule Your Call</h2>
+      <p>Let’s chat over Zoom—no pressure, just a quick conversation to get started.</p>
+      <button class="btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/matthewfudala10623/booking'});return false;">Book Now</button>
+    </div>
+  </section>
+
+  <footer data-aos="fade-up">
+    <p>&copy; 2026 MX Market Media LLC | Denver, CO</p>
+    <p><a href="mailto:hello@mxmarketmedia.com">hello@mxmarketmedia.com</a></p>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js"></script>
+  <script>AOS.init({ once: true, duration: 900, offset: 50 });</script>
 </body>
 </html>
