@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
   <nav>
@@ -33,7 +32,6 @@
     </div>
   </section>
 
-  <!-- Services -->
   <section id="services">
     <div class="container">
       <h2 class="section-title" data-aos="fade-down">Our Services</h2>
@@ -62,7 +60,6 @@
     </div>
   </section>
 
-  <!-- About -->
   <section id="about">
     <div class="container" data-aos="fade-up">
       <h2 class="section-title">About Me</h2>
@@ -70,7 +67,6 @@
     </div>
   </section>
 
-  <!-- Gear -->
   <section id="gear">
     <div class="container" data-aos="fade-up">
       <h2 class="section-title">Our Gear</h2>
@@ -84,7 +80,6 @@
     </div>
   </section>
 
-  <!-- Portfolio -->
   <section id="portfolio">
     <div class="container">
       <h2 class="section-title" data-aos="fade-down">Portfolio Highlights</h2>
@@ -97,7 +92,6 @@
     </div>
   </section>
 
-  <!-- Contact -->
   <section id="contact">
     <div class="container" data-aos="fade-up">
       <h2 class="section-title">Schedule Your Call</h2>
@@ -107,59 +101,18 @@
     </div>
   </section>
 
-  <!-- Floating AI Chat Widget -->
-  <div id="ai-chat-widget">
-    <button id="chat-toggle-btn" aria-label="Open Chat">💬</button>
-    <div id="chat-window" class="chat-hidden">
-      <div class="chat-header">
-        <span>MX Media Assistant</span>
-        <button id="chat-close-btn">×</button>
-      </div>
-      <div id="chat-messages">
-        <div class="chat-msg bot-msg">Hi! How can I help with your media project or pricing today?</div>
-      </div>
-      <div class="chat-input-area">
-        <input type="text" id="chat-input" placeholder="Ask a question..." />
-        <button id="chat-send-btn">Send</button>
-      </div>
-    </div>
-  </div>
-
   <footer data-aos="fade-up">
     <p>&copy; 2026 MX Market Media LLC | Denver, CO</p>
     <p><a href="mailto:Matthewfudala10623@gmail.com">Matthewfudala10623@gmail.com</a> | <a href="tel:+17207459644">+1 (720) 745-9644</a></p>
   </footer>
 
+  <!-- Scripts (no chat widget) -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script src="https://assets.calendly.com/assets/external/widget.js"></script>
   <script>
     AOS.init({ once: true, duration: 900, offset: 50 });
     const lightbox = GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true });
-    const chatToggle = document.getElementById('chat-toggle-btn');
-    const chatWindow = document.getElementById('chat-window');
-    const chatClose = document.getElementById('chat-close-btn');
-    const chatSend = document.getElementById('chat-send-btn');
-    const chatInput = document.getElementById('chat-input');
-    const chatMessages = document.getElementById('chat-messages');
-    chatToggle.addEventListener('click', () => chatWindow.classList.toggle('chat-hidden'));
-    chatClose.addEventListener('click', () => chatWindow.classList.add('chat-hidden'));
-    async function sendMessage() {
-      const text = chatInput.value.trim(); if (!text) return;
-      const userDiv = document.createElement('div'); userDiv.className = 'chat-msg user-msg'; userDiv.textContent = text;
-      chatMessages.appendChild(userDiv); chatInput.value = ''; chatMessages.scrollTop = chatMessages.scrollHeight;
-      const loadingDiv = document.createElement('div'); loadingDiv.className = 'chat-msg bot-msg'; loadingDiv.textContent = 'Thinking...';
-      chatMessages.appendChild(loadingDiv); chatMessages.scrollTop = chatMessages.scrollHeight;
-      try {
-        const res = await fetch('https://mx-chat-bot.matthewfudala10623.workers.dev/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message: text }) });
-        const data = await res.json(); loadingDiv.textContent = data.reply || 'Thanks for reaching out!';
-      } catch (err) {
-        loadingDiv.textContent = 'Unable to connect. Please fill out our booking form!';
-      }
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-    chatSend.addEventListener('click', sendMessage);
-    chatInput.addEventListener('keypress', e => { if (e.key === 'Enter') sendMessage(); });
   </script>
 </body>
 </html>
