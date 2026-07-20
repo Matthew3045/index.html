@@ -2,19 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Automotive Portfolio | MX Market Media</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automotive | MX Market Media</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
 </head>
 <body>
-  <nav><div class="logo"><a href="index.html#hero"><img src="images/logo.png" alt="MX Market Media"></a></div><div class="nav-links"><a href="index.html">Back Home</a></div></nav>
-  <section class="portfolio-page"><div class="container">
-      <h1>Automotive Portfolio</h1>
-      <p>Capturing the adrenaline and design of motorsport and high-end automotive projects.</p>
-      <div class="gallery-grid">
-        <img src="images/cars.jpg" alt="Automotive Project">
-      </div>
-      <div class="cta-box"><h3>Need dynamic automotive content?</h3><a href="https://calendly.com/matthewfudala10623/booking" target="_blank" class="btn">Book a Discovery Call</a></div>
-  </div></section>
+  <nav>
+    <div class="logo"><a href="index.html"><img src="images/logo.png" alt="MX Market Media"></a></div>
+    <div class="nav-links">
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#gear">Gear</a>
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section id="automotive-gallery" class="container">
+    <h2 class="section-title" data-aos="fade-down">Automotive Portfolio</h2>
+    <div class="view-toggle" data-aos="fade-up">
+      <button class="toggle-btn active" data-mode="grid">Grid View</button>
+      <button class="toggle-btn" data-mode="slider">Slider View</button>
+    </div>
+    <div id="gallery-automotive" class="gallery-container grid-view"></div>
+  </section>
+
+  <!-- Remove chat widget -->
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="gallery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 800 });
+    const lightbox = GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true });
+    document.querySelectorAll('.toggle-btn').forEach(btn=>{
+      btn.addEventListener('click', () => {
+        const mode = btn.dataset.mode;
+        const container = document.getElementById('gallery-automotive');
+        document.querySelectorAll('.toggle-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        container.classList.toggle('grid-view', mode==='grid');
+        container.classList.toggle('slider-view', mode==='slider');
+      });
+    });
+  </script>
 </body>
 </html>
