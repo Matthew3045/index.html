@@ -3,14 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO & Meta Tags -->
-  <title>MX Market Media | Denver Real Estate & Automotive Photography</title>
-  <meta name="description" content="Premium photography, videography, and digital marketing in Denver, CO. Specializing in real estate property tours, automotive media, and events.">
-  <meta name="keywords" content="Denver real estate photography, automotive videography, drone property tours, Colorado media agency, MX Market Media">
-  <meta property="og:title" content="MX Market Media | Premium Visuals">
-  <meta property="og:description" content="Bringing your vision to life through high-quality photo and video in Denver, Colorado.">
-  <meta property="og:type" content="website">
+  <title>MX Market Media LLC</title>
   
   <!-- CSS Links -->
   <link rel="stylesheet" href="style.css">
@@ -21,60 +14,76 @@
   <!-- Navigation -->
   <nav>
     <div class="logo">
-      <a href="#hero"><img src="images/logo.png" alt="MX Market Media Logo"></a>
+      <a href="#hero"><img src="images/logo.png" alt="MX Market Media Logo" style="max-height: 40px;"></a>
     </div>
     <div class="nav-links">
       <a href="#hero">Home</a>
       <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
       <a href="#about">About</a>
+      <a href="#gear">Gear</a>
+      <a href="#portfolio">Portfolio</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
-  <!-- Hero Header -->
-  <header id="hero">
+  <!-- Hero Section -->
+  <section id="hero">
     <video class="video-bg" autoplay muted loop playsinline>
       <source src="images/hero-video.mp4" type="video/mp4">
+      <!-- Fallback to poster image -->
     </video>
-    <div class="hero-overlay"></div>
     
     <div class="hero-content" data-aos="fade-up">
       <h1>Your Vision. Our Lens.</h1>
-      <p>Premium Photography, Videography & Marketing for Real Estate, Automotive & Events.</p>
+      <p>Premium Photography, Videography & Marketing for Real Estate, Automotive, Events & More.</p>
+      
+      <!-- Working Calendly Link -->
       <a href="https://calendly.com/matthewfudala10623/booking" target="_blank" rel="noopener noreferrer" class="btn">
         SCHEDULE A CALL
       </a>
     </div>
-  </header>
+  </section>
 
-  <!-- Services (Interactive Gateways) -->
+  <!-- Services (Now interactive gateways to your work) -->
   <section id="services">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">Our Services</h2>
+      
       <div class="services-grid" data-aos="fade-up">
         
-        <a href="#portfolio" class="service-item real-estate" onclick="filterSelection('real-estate')">
+        <!-- Real Estate -->
+        <a href="real-estate.html" class="service-item real-estate">
           <div class="card-overlay">
             <h3>Real Estate</h3>
             <p>Stunning property photography & tours to sell faster.</p>
-            <span class="card-link">View Work &rarr;</span>
+            <span class="card-link">View Portfolio &rarr;</span>
           </div>
         </a>
 
-        <a href="#portfolio" class="service-item automotive" onclick="filterSelection('automotive')">
+        <!-- Cars -->
+        <a href="automotive.html" class="service-item automotive">
           <div class="card-overlay">
-            <h3>Automotive</h3>
+            <h3>Cars</h3>
             <p>Dynamic automotive shoots & motorsport edits.</p>
-            <span class="card-link">View Work &rarr;</span>
+            <span class="card-link">View Portfolio &rarr;</span>
           </div>
         </a>
 
-        <a href="#portfolio" class="service-item events" onclick="filterSelection('events')">
+        <!-- Events -->
+        <a href="events.html" class="service-item events">
           <div class="card-overlay">
-            <h3>Events & Marketing</h3>
-            <p>Event coverage & data-driven ad campaigns.</p>
-            <span class="card-link">View Work &rarr;</span>
+            <h3>Events</h3>
+            <p>Event photography & highlight reels to capture every moment.</p>
+            <span class="card-link">View Portfolio &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Marketing -->
+        <a href="marketing.html" class="service-item marketing">
+          <div class="card-overlay">
+            <h3>Marketing</h3>
+            <p>Data-driven Google & Meta campaigns to grow your audience.</p>
+            <span class="card-link">View Portfolio &rarr;</span>
           </div>
         </a>
 
@@ -82,59 +91,50 @@
     </div>
   </section>
 
-  <!-- Dynamic Filter Portfolio -->
-  <section id="portfolio">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Featured Work</h2>
-      
-      <!-- Filter Buttons -->
-      <div id="filter-btn-container" data-aos="fade-up">
-        <button class="filter-btn active" onclick="filterSelection('all')">Show All</button>
-        <button class="filter-btn" onclick="filterSelection('real-estate')">Real Estate</button>
-        <button class="filter-btn" onclick="filterSelection('automotive')">Automotive</button>
-        <button class="filter-btn" onclick="filterSelection('events')">Events</button>
-      </div>
-
-      <!-- Gallery Grid -->
-      <div class="portfolio-grid" data-aos="fade-up">
-        <div class="filter-item real-estate">
-          <img src="images/portfolio1.jpg" alt="Real Estate Exterior">
-        </div>
-        <div class="filter-item automotive">
-          <img src="images/portfolio2.jpg" alt="Automotive Roller">
-        </div>
-        <div class="filter-item real-estate">
-          <img src="images/portfolio3.jpg" alt="Real Estate Interior">
-        </div>
-        <div class="filter-item events">
-          <img src="images/portfolio4.jpg" alt="Event Coverage">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About & Gear -->
+  <!-- About -->
   <section id="about">
     <div class="container" data-aos="fade-up">
-      <h2 class="section-title">About Me & The Gear</h2>
-      <div class="about-content">
-        <p>Hi, I'm Matthew—a 19-year-old solo creator based in Denver, Colorado. I am personally invested in bringing your vision to life through high-quality media, whether that means capturing a property layout or hanging out the back of a truck for a roller shot.</p>
-        
-        <ul class="gear-list" style="margin-top: 2rem;">
-          <li><strong>Cameras:</strong> Sony Alpha 7 IV & Canon EOS R50</li>
-          <li><strong>Drone:</strong> DJI Air 2S & RS4 Pro w/LiDAR</li>
-          <li><strong>Audio/Lighting:</strong> DJI Mic 2 & Softbox Kits</li>
-          <li><strong>Post:</strong> DaVinci Resolve Studio</li>
-        </ul>
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <p>Hi, I'm Matthew—a 19-year-old solo creator based in Denver, Colorado. Passionate and personally invested in bringing your vision to life through high-quality media and strategic marketing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gear -->
+  <section id="gear">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">Our Gear</h2>
+      <ul class="gear-list">
+        <li><strong>Drone:</strong> DJI Air 2S & RS4 Pro w/LiDAR autofocus</li>
+        <li><strong>Lighting:</strong> Softboxes & kits</li>
+        <li><strong>Cameras:</strong> Sony Alpha 7 IV & Canon EOS R50</li>
+        <li><strong>Audio:</strong> DJI Mic 2</li>
+        <li><strong>Post:</strong> DaVinci Resolve Studio</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Portfolio Highlights</h2>
+      <div class="portfolio-grid">
+        <img data-aos="zoom-in" src="images/portfolio1.jpg" alt="Project 1">
+        <img data-aos="zoom-in" src="images/portfolio2.jpg" alt="Project 2">
+        <img data-aos="zoom-in" src="images/portfolio3.jpg" alt="Project 3">
+        <img data-aos="zoom-in" src="images/portfolio4.jpg" alt="Project 4">
       </div>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact">
-    <div class="container" data-aos="fade-up">
-      <h2 class="section-title">Ready to get started?</h2>
-      <p>Let's chat over Zoom—no pressure, just a quick conversation about your media needs.</p>
+    <div class="container" data-aos="fade-up" style="text-align: center;">
+      <h2 class="section-title">Schedule Your Call</h2>
+      <p style="margin-bottom: 2rem;">Ready to get started? Let's chat over Zoom—no pressure, just a quick conversation.</p>
+      
+      <!-- Working Calendly Link -->
       <a href="https://calendly.com/matthewfudala10623/booking" target="_blank" rel="noopener noreferrer" class="btn">
         BOOK YOUR ZOOM CALL
       </a>
@@ -147,52 +147,14 @@
     <p><a href="mailto:hello@mxmarketmedia.com">hello@mxmarketmedia.com</a></p>
   </footer>
 
-  <!-- Scripts -->
+  <!-- AOS Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Initialize Scroll Animations
-    AOS.init({ duration: 800, once: true, offset: 100 });
-
-    // Dynamic Portfolio Filtering Logic
-    filterSelection("all")
-    function filterSelection(c) {
-      var x, i;
-      x = document.getElementsByClassName("filter-item");
-      if (c == "all") c = "";
-      for (i = 0; i < x.length; i++) {
-        RemoveClass(x[i], "show");
-        if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
-      }
-      // Highlight active button
-      var btns = document.getElementsByClassName("filter-btn");
-      for (i = 0; i < btns.length; i++) {
-        btns[i].className = btns[i].className.replace(" active", "");
-        if(btns[i].getAttribute("onclick").includes(c || 'all')) {
-            btns[i].className += " active";
-        }
-      }
-    }
-
-    function AddClass(element, name) {
-      var i, arr1, arr2;
-      arr1 = element.className.split(" ");
-      arr2 = name.split(" ");
-      for (i = 0; i < arr2.length; i++) {
-        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-      }
-    }
-
-    function RemoveClass(element, name) {
-      var i, arr1, arr2;
-      arr1 = element.className.split(" ");
-      arr2 = name.split(" ");
-      for (i = 0; i < arr2.length; i++) {
-        while (arr1.indexOf(arr2[i]) > -1) {
-          arr1.splice(arr1.indexOf(arr2[i]), 1);     
-        }
-      }
-      element.className = arr1.join(" ");
-    }
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
   </script>
 </body>
 </html>
