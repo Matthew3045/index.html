@@ -25,6 +25,12 @@ body {
   line-height: 1.6;
 }
 
+/* Kills any browser default purple hyperlink text */
+a, a:visited {
+  color: var(--text-main);
+  text-decoration: none;
+}
+
 /* ==========================================
    HEADER & DROPDOWN NAVIGATION
    ========================================== */
@@ -44,7 +50,6 @@ header {
   border-bottom: none !important;
 }
 
-/* Header Logo */
 .site-logo {
   height: 52px;
   width: auto;
@@ -65,8 +70,7 @@ nav {
 }
 
 nav a, .dropbtn {
-  color: rgba(255, 255, 255, 0.88);
-  text-decoration: none;
+  color: rgba(255, 255, 255, 0.88) !important;
   font-size: 0.95rem;
   font-weight: 500;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
@@ -78,11 +82,11 @@ nav a, .dropbtn {
 }
 
 nav a:hover, nav a.active, .dropdown:hover .dropbtn, .dropdown.active .dropbtn {
-  color: #FFFFFF;
+  color: var(--accent-gold) !important;
   text-shadow: 0 0 10px var(--gold-glow);
 }
 
-/* Single Vertical Dropdown Menu */
+/* Vertical Dropdown Menu */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -125,14 +129,13 @@ nav a:hover, nav a.active, .dropdown:hover .dropbtn, .dropdown.active .dropbtn {
   color: var(--accent-gold) !important;
 }
 
-/* Activate dropdown on hover or click tap */
 .dropdown:hover .dropdown-content,
 .dropdown.active .dropdown-content {
   display: flex;
 }
 
 /* ==========================================
-   PAGE HEROES & SPACING FIXES
+   PAGE HEROES & SPACING
    ========================================== */
 .hero {
   position: relative;
@@ -146,7 +149,6 @@ nav a:hover, nav a.active, .dropdown:hover .dropbtn, .dropdown.active .dropbtn {
   padding: 0 20px;
 }
 
-/* Generous top-padding so text sits cleanly below header */
 .page-hero {
   position: relative;
   padding: 190px 5% 70px;
@@ -159,6 +161,7 @@ nav a:hover, nav a.active, .dropdown:hover .dropbtn, .dropdown.active .dropbtn {
   font-size: clamp(2.4rem, 5vw, 4rem);
   font-weight: 800;
   margin-bottom: 15px;
+  color: #FFFFFF;
   text-shadow: 0 2px 20px rgba(0,0,0,0.8);
 }
 
@@ -194,18 +197,19 @@ nav a:hover, nav a.active, .dropdown:hover .dropbtn, .dropdown.active .dropbtn {
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 25px;
-  margin-top: 40px; /* Breathing room for hero title */
+  margin-top: 40px;
+  color: #FFFFFF;
   text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
 }
 
 /* ==========================================
-   BUTTONS
+   GOLD GLOW BUTTONS
    ========================================== */
 .btn-gold {
   display: inline-block;
   padding: 16px 36px;
   background: var(--accent-gold);
-  color: #000;
+  color: #000 !important;
   font-weight: 700;
   text-decoration: none;
   border-radius: 99px;
@@ -221,11 +225,11 @@ nav a:hover, nav a.active, .dropdown:hover .dropbtn, .dropdown.active .dropbtn {
 }
 
 /* ==========================================
-   GRIDS & CARDS
+   GRIDS & IMAGE GALLERIES
    ========================================== */
 .content-section {
   padding: 80px 5%;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -239,12 +243,42 @@ nav a:hover, nav a.active, .dropdown:hover .dropbtn, .dropdown.active .dropbtn {
   text-align: center;
   font-size: 2.2rem;
   margin-bottom: 50px;
+  color: #FFFFFF;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
 }
 
-.services-grid, .gear-grid {
+.services-grid, .gear-grid, .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
+}
+
+.gallery-card {
+  position: relative;
+  height: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: var(--card-bg);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 30px var(--gold-glow);
+}
+
+.gallery-card:hover img {
+  transform: scale(1.06);
 }
 
 .gear-card, .info-card {
@@ -382,7 +416,7 @@ footer {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 40px;
   margin-bottom: 40px;
 }
@@ -393,9 +427,9 @@ footer {
   margin-bottom: 15px;
 }
 
-.footer-col a {
+.footer-col a, .footer-col p {
   display: block;
-  color: var(--text-muted);
+  color: var(--text-muted) !important;
   text-decoration: none;
   margin-bottom: 10px;
   font-size: 0.9rem;
@@ -403,7 +437,7 @@ footer {
 }
 
 .footer-col a:hover {
-  color: var(--accent-gold);
+  color: var(--accent-gold) !important;
 }
 
 .footer-bottom {
