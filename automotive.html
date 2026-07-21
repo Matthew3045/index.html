@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Automotive Media | MX Market Media</title>
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
   <header>
@@ -34,7 +34,13 @@
 
   <!-- Photo Portfolio Gallery -->
   <section class="content-section">
-    <h2 class="section-title">Automotive Portfolio</h2>
+    <h2 class="section-title" style="margin-bottom: 10px;">Automotive Portfolio</h2>
+    
+    <!-- Instagram Link -->
+    <a href="https://instagram.com/mx.photography0" target="_blank" style="display: block; text-align: center; color: var(--accent-gold); font-size: 1.1rem; font-weight: 600; text-decoration: none; margin-bottom: 45px; letter-spacing: 0.05em;">
+      Follow on Instagram: @mx.photography0 ➔
+    </a>
+
     <div class="gallery-grid">
       <div class="gallery-card"><img src="images/automotive-1.jpg" alt="Automotive Shoot 1" onerror="this.src='https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800'" /></div>
       <div class="gallery-card"><img src="images/automotive-2.jpg" alt="Automotive Shoot 2" onerror="this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800'" /></div>
@@ -44,6 +50,14 @@
       <div class="gallery-card"><img src="images/automotive-6.jpg" alt="Automotive Shoot 6" onerror="this.src='https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800'" /></div>
     </div>
   </section>
+
+  <!-- Hidden Lightbox Structure -->
+  <div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <button class="lightbox-prev">&#10094;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="Gallery Fullscreen">
+    <button class="lightbox-next">&#10095;</button>
+  </div>
 
   <section class="content-section" style="padding-top: 0;">
     <div class="info-card">
@@ -82,13 +96,56 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Dropdown logic
       const drop = document.getElementById('servicesDropdown');
       if (drop) {
-        drop.addEventListener('click', (e) => {
-          drop.classList.toggle('active');
-          e.stopPropagation();
-        });
+        drop.addEventListener('click', (e) => { drop.classList.toggle('active'); e.stopPropagation(); });
         document.addEventListener('click', () => drop.classList.remove('active'));
+      }
+
+      // Lightbox Logic
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const images = document.querySelectorAll('.gallery-card img');
+      let currentIndex = 0;
+
+      if(lightbox && images.length > 0) {
+        images.forEach((img, index) => {
+          img.addEventListener('click', () => {
+            currentIndex = index;
+            lightboxImg.src = images[currentIndex].src;
+            lightbox.classList.add('active');
+          });
+        });
+
+        const closeBtn = document.querySelector('.close-lightbox');
+        const prevBtn = document.querySelector('.lightbox-prev');
+        const nextBtn = document.querySelector('.lightbox-next');
+
+        closeBtn.addEventListener('click', () => lightbox.classList.remove('active'));
+        
+        prevBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+          lightboxImg.src = images[currentIndex].src;
+        });
+        
+        nextBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+          lightboxImg.src = images[currentIndex].src;
+        });
+
+        // Close when clicking outside image
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) lightbox.classList.remove('active');
+        });
+
+        // Keyboard arrow support
+        document.addEventListener('keydown', (e) => {
+          if (!lightbox.classList.contains('active')) return;
+          if (e.key === 'Escape') lightbox.classList.remove('active');
+          if (e.key === 'ArrowLeft') prevBtn.click();
+          if (e.key === 'ArrowRight') nextBtn.click();
+        });
       }
     });
   </script>
