@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MX Market Media | High-End Denver Media Production</title>
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body>
 
-  <!-- Crystal Clear Header with Dropdown -->
+  <!-- Crystal Header with Vertical Dropdown -->
   <header>
     <a href="index.html">
       <img src="images/logo.png" alt="MX Market Media" class="site-logo" onerror="this.onerror=null; this.src='images/logo.webp';" />
@@ -16,7 +16,7 @@
     <nav>
       <a href="index.html" class="active">Home</a>
       
-      <div class="dropdown">
+      <div class="dropdown" id="servicesDropdown">
         <span class="dropbtn">Services ▾</span>
         <div class="dropdown-content">
           <a href="real-estate.html">Real Estate</a>
@@ -42,39 +42,39 @@
   </section>
 
   <!-- Services Gateway Grid -->
-  <section class="services-section" style="padding: 100px 5%; max-width: 1300px; margin: 0 auto;">
-    <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 50px;">Core Production Services</h2>
+  <section class="services-section">
+    <h2 class="section-title">Core Production Services</h2>
     <div class="services-grid">
       
       <a href="real-estate.html" class="service-card">
         <img src="images/real-estate-1.jpg" alt="Real Estate Photography" onerror="this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800'" />
         <div class="service-card-content">
-          <h3 style="color: #FFF;">Real Estate</h3>
-          <p style="color: var(--text-muted); font-size: 0.85rem;">HDR photography, 4K video tours & drone optics.</p>
+          <h3>Real Estate</h3>
+          <p>HDR photography, 4K video tours & drone optics.</p>
         </div>
       </a>
 
       <a href="automotive.html" class="service-card">
         <img src="images/automotive-1.jpg" alt="Automotive Media" onerror="this.src='https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800'" />
         <div class="service-card-content">
-          <h3 style="color: #FFF;">Automotive</h3>
-          <p style="color: var(--text-muted); font-size: 0.85rem;">High-speed tracking shots, rollers & feature edits.</p>
+          <h3>Automotive</h3>
+          <p>High-speed tracking shots, rollers & feature edits.</p>
         </div>
       </a>
 
       <a href="events.html" class="service-card">
         <img src="images/events-1.jpg" alt="Event Coverage" onerror="this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?w=800'" />
         <div class="service-card-content">
-          <h3 style="color: #FFF;">Events</h3>
-          <p style="color: var(--text-muted); font-size: 0.85rem;">Cinematic coverage, wireless multi-mic audio & highlights.</p>
+          <h3>Events</h3>
+          <p>Cinematic coverage, wireless multi-mic audio & highlights.</p>
         </div>
       </a>
 
       <a href="marketing.html" class="service-card">
         <img src="images/marketing-1.jpg" alt="Commercial Marketing" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800'" />
         <div class="service-card-content">
-          <h3 style="color: #FFF;">Marketing</h3>
-          <p style="color: var(--text-muted); font-size: 0.85rem;">High-converting social campaigns & brand commercials.</p>
+          <h3>Marketing</h3>
+          <p>High-converting social campaigns & brand commercials.</p>
         </div>
       </a>
 
@@ -136,5 +136,17 @@
     <div class="footer-bottom">&copy; 2026 MX Market Media. All rights reserved.</div>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const drop = document.getElementById('servicesDropdown');
+      if (drop) {
+        drop.addEventListener('click', (e) => {
+          drop.classList.toggle('active');
+          e.stopPropagation();
+        });
+        document.addEventListener('click', () => drop.classList.remove('active'));
+      }
+    });
+  </script>
 </body>
 </html>
