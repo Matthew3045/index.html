@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Founder | MX Market Media</title>
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body>
 
@@ -14,7 +14,7 @@
     </a>
     <nav>
       <a href="index.html">Home</a>
-      <div class="dropdown">
+      <div class="dropdown" id="servicesDropdown">
         <span class="dropbtn">Services ▾</span>
         <div class="dropdown-content">
           <a href="real-estate.html">Real Estate</a>
@@ -34,7 +34,7 @@
   </section>
 
   <section class="content-section">
-    <div class="info-card" style="margin-bottom: 30px;">
+    <div class="info-card">
       <h3>Our Vision & Standards</h3>
       <p style="color: var(--text-muted); margin-bottom: 15px;">
         MX Market Media was founded to deliver modern, aggressive, high-converting visual media across Denver and Colorado's commercial markets. We specialize in bringing true cinema-grade production optics and color science into industries that demand visual authority.
@@ -98,5 +98,17 @@
     <div class="footer-bottom">&copy; 2026 MX Market Media. All rights reserved.</div>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const drop = document.getElementById('servicesDropdown');
+      if (drop) {
+        drop.addEventListener('click', (e) => {
+          drop.classList.toggle('active');
+          e.stopPropagation();
+        });
+        document.addEventListener('click', () => drop.classList.remove('active'));
+      }
+    });
+  </script>
 </body>
 </html>
