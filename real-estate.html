@@ -1,2 +1,64 @@
 <!DOCTYPE html>
-<html lang="en"><head><title>Real Estate Portfolio | MX Market Media</title><link rel="stylesheet" href="style.css"></head><body><nav><div class="logo"><a href="index.html"><img src="images/logo.png" alt="Logo"></a></div><div class="nav-links"><a href="index.html">Back Home</a></div></nav><section class="portfolio-page"><h1>Real Estate Portfolio</h1><div class="gallery-grid"><img src="images/real-estate1.jpg" alt="Work"><img src="images/real-estate2.jpg" alt="Work"></div><div class="cta-box"><a href="https://calendly.com/matthewfudala10623/booking" target="_blank" class="btn">Book a Call</a></div></section></body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real Estate Media | MX Market Media</title>
+  <link rel="stylesheet" href="style.css?v=4" />
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="images/logo.png" alt="MX Market Media" class="site-logo" onerror="this.onerror=null; this.src='images/logo.webp';" /></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <span class="dropbtn">Services ▾</span>
+        <div class="dropdown-content">
+          <a href="real-estate.html">Real Estate</a>
+          <a href="automotive.html">Automotive</a>
+          <a href="events.html">Events</a>
+          <a href="marketing.html">Marketing</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+      <a href="gear.html">Gear</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <h1>Real Estate Media</h1>
+    <p>HDR photography, 4K walkthrough video tours, and drone aerials tailored for Denver real estate agents.</p>
+  </section>
+
+  <section class="content-section">
+    <div class="info-card">
+      <h3>Packages & Standard Pricing</h3>
+      <p style="color: var(--text-muted); margin-bottom: 10px;">• <strong>Standard Listing Photography</strong>: $165 (Includes 15 High-Dynamic-Range photos).</p>
+      <p style="color: var(--text-muted); margin-bottom: 10px;">• <strong>Drone Aerial Add-on</strong>: +$80 (Includes aerial photo & video passes).</p>
+      <p style="color: var(--text-muted);">• <strong>4K Cinematic Video Tour</strong>: +$100 (Full interior & exterior walkthrough edit).</p>
+    </div>
+  </section>
+
+  <section id="booking" class="booking-section">
+    <div class="form-container">
+      <h2 style="text-align: center; margin-bottom: 25px;">Book Real Estate Media</h2>
+      <form action="https://formspree.io/f/mkodbawg" method="POST">
+        <input type="hidden" name="service" value="Real Estate" />
+        <div class="form-group"><label for="name">Your Name</label><input type="text" name="name" placeholder="John Doe" required /></div>
+        <div class="form-group"><label for="email">Email Address</label><input type="email" name="email" placeholder="john@example.com" required /></div>
+        <div class="form-group"><label for="details">Listing Address & Preferred Date</label><textarea name="details" rows="4" placeholder="123 Main St, Denver CO..."></textarea></div>
+        <button type="submit" class="btn-gold" style="width: 100%;">Submit Request</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col"><h4>MX Market Media</h4><p style="color: var(--text-muted); font-size: 0.85rem;">Denver, CO.</p></div>
+      <div class="footer-col"><h4>Services</h4><a href="real-estate.html">Real Estate</a><a href="automotive.html">Automotive</a><a href="events.html">Events</a><a href="marketing.html">Marketing</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="gear.html">Gear</a></div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 MX Market Media.</div>
+  </footer>
+</body>
+</html>
