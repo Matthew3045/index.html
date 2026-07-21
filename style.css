@@ -26,7 +26,7 @@ body {
 }
 
 /* ==========================================
-   COMPLETELY CLEAR / CRYSTAL GLASS HEADER
+   HEADER & DROPDOWN NAVIGATION
    ========================================== */
 header {
   position: fixed;
@@ -37,17 +37,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 5%;
+  padding: 18px 5%;
   background: transparent !important;
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   backdrop-filter: blur(16px) saturate(180%);
   border-bottom: none !important;
-  box-shadow: none !important;
 }
 
-/* Header Logo Image */
+/* Increased Logo Size */
 .site-logo {
-  height: 42px;
+  height: 56px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 0 8px rgba(0,0,0,0.8));
@@ -61,26 +60,67 @@ header {
 
 nav {
   display: flex;
-  gap: 22px;
+  gap: 24px;
   align-items: center;
 }
 
-nav a {
+nav a, .dropbtn {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
-nav a:hover, nav a.active {
+nav a:hover, nav a.active, .dropdown:hover .dropbtn {
   color: #FFFFFF;
   text-shadow: 0 0 10px var(--gold-glow);
 }
 
+/* Dropdown Menu Styling */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 10, 14, 0.95);
+  backdrop-filter: blur(20px);
+  min-width: 180px;
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 8px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 15px rgba(255, 215, 0, 0.1);
+  z-index: 10000;
+  margin-top: 10px;
+}
+
+.dropdown-content a {
+  color: var(--text-main) !important;
+  padding: 10px 20px;
+  display: block;
+  font-size: 0.88rem;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background: rgba(255, 215, 0, 0.12);
+  color: var(--accent-gold) !important;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 /* ==========================================
-   HERO SECTION
+   PAGE HEADERS & HERO
    ========================================== */
 .hero {
   position: relative;
@@ -92,6 +132,27 @@ nav a:hover, nav a.active {
   align-items: center;
   text-align: center;
   padding: 0 20px;
+}
+
+.page-hero {
+  position: relative;
+  padding: 160px 5% 60px;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(12, 12, 16, 0.8), var(--bg-dark));
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.page-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.page-hero p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .hero-video {
@@ -119,11 +180,11 @@ nav a:hover, nav a.active {
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 25px;
-  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0,0,0,0.5);
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
 }
 
 /* ==========================================
-   GOLD GLOW BUTTONS
+   BUTTONS
    ========================================== */
 .btn-gold {
   display: inline-block;
@@ -145,26 +206,56 @@ nav a:hover, nav a.active {
 }
 
 /* ==========================================
-   SERVICES GRID WITH GLOW
+   GRIDS & CONTENT CARDS
    ========================================== */
-.services-section {
-  padding: 100px 5%;
-  max-width: 1300px;
+.content-section {
+  padding: 80px 5%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.section-title {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 50px;
-  letter-spacing: -0.01em;
-  text-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
+.services-grid, .gear-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
+.gear-card, .info-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.gear-card:hover, .info-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 215, 0, 0.4);
+  box-shadow: 0 0 25px var(--gold-glow);
+}
+
+.gear-card h3, .info-card h3 {
+  color: var(--accent-gold);
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+}
+
+.gear-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.gear-card li {
+  color: var(--text-main);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.95rem;
+}
+
+.gear-card li:last-child {
+  border-bottom: none;
 }
 
 .service-card {
@@ -195,17 +286,6 @@ nav a:hover, nav a.active {
   background: linear-gradient(to top, rgba(5,5,7,0.95), transparent);
 }
 
-.service-card h3 {
-  color: #FFF;
-  font-size: 1.4rem;
-  margin-bottom: 5px;
-}
-
-.service-card p {
-  color: var(--text-muted);
-  font-size: 0.85rem;
-}
-
 .service-card:hover {
   transform: translateY(-6px);
   border-color: rgba(255, 215, 0, 0.5);
@@ -218,7 +298,7 @@ nav a:hover, nav a.active {
 }
 
 /* ==========================================
-   BOTTOM CONTACT / BOOKING FORM
+   FORM & FOOTER
    ========================================== */
 .booking-section {
   padding: 90px 5%;
@@ -248,9 +328,7 @@ nav a:hover, nav a.active {
   color: var(--text-muted);
 }
 
-.form-group input, 
-.form-group select, 
-.form-group textarea {
+.form-group input, .form-group select, .form-group textarea {
   width: 100%;
   padding: 14px;
   background: rgba(5, 5, 7, 0.8);
@@ -262,16 +340,11 @@ nav a:hover, nav a.active {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.form-group input:focus, 
-.form-group select:focus, 
-.form-group textarea:focus {
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
   border-color: var(--accent-gold);
   box-shadow: 0 0 10px var(--gold-glow);
 }
 
-/* ==========================================
-   FOOTER
-   ========================================== */
 footer {
   padding: 60px 5% 30px;
   background: #020203;
@@ -314,11 +387,10 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
   header { padding: 15px 5%; }
-  nav { gap: 12px; }
-  nav a { font-size: 0.8rem; }
+  nav { gap: 14px; }
+  nav a, .dropbtn { font-size: 0.82rem; }
+  .site-logo { height: 44px; }
   .form-container { padding: 25px; }
-  .site-logo { height: 32px; }
 }
