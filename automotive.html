@@ -1,54 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Automotive | MX Market Media</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automotive Media | MX Market Media</title>
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
-  <nav>
-    <div class="logo"><a href="index.html"><img src="images/logo.png" alt="MX Market Media"></a></div>
-    <div class="nav-links">
-      <a href="index.html#hero">Home</a>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#gear">Gear</a>
-      <a href="index.html#portfolio">Portfolio</a>
-      <a href="index.html#contact">Contact</a>
-    </div>
-  </nav>
+  <header>
+    <a href="index.html"><img src="images/logo.png" alt="MX Market Media" class="site-logo" onerror="this.onerror=null; this.src='images/logo.webp';" /></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <span class="dropbtn">Services ▾</span>
+        <div class="dropdown-content">
+          <a href="real-estate.html">Real Estate</a>
+          <a href="automotive.html">Automotive</a>
+          <a href="events.html">Events</a>
+          <a href="marketing.html">Marketing</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+      <a href="gear.html">Gear</a>
+    </nav>
+  </header>
 
-  <section id="automotive-gallery" class="container">
-    <h2 class="section-title" data-aos="fade-down">Automotive Portfolio</h2>
-    <div class="view-toggle" data-aos="fade-up">
-      <button class="toggle-btn active" data-mode="grid">Grid View</button>
-      <button class="toggle-btn" data-mode="slider">Slider View</button>
-    </div>
-    <div id="gallery-automotive" class="gallery-container grid-view"></div>
+  <section class="page-hero">
+    <h1>Automotive Media</h1>
+    <p>Rolling tracking shots, high-speed cinema video, and dynamic photo sets for vehicle owners and dealerships.</p>
   </section>
 
-  <!-- Remove chat widget -->
+  <section class="content-section">
+    <div class="info-card">
+      <h3>Automotive Pricing</h3>
+      <p style="color: var(--text-muted); margin-bottom: 10px;">• <strong>Photo Package</strong>: $80 (10 fully retouched photos).</p>
+      <p style="color: var(--text-muted);">• <strong>Photo + Video Package</strong>: $200 (10 retouched photos + 4K rolling & static video edit).</p>
+    </div>
+  </section>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="gallery.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-  <script>
-    AOS.init({ once: true, duration: 800 });
-    const lightbox = GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true });
-    document.querySelectorAll('.toggle-btn').forEach(btn=>{
-      btn.addEventListener('click', () => {
-        const mode = btn.dataset.mode;
-        const container = document.getElementById('gallery-automotive');
-        document.querySelectorAll('.toggle-btn').forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
-        container.classList.toggle('grid-view', mode==='grid');
-        container.classList.toggle('slider-view', mode==='slider');
-      });
-    });
-  </script>
+  <section id="booking" class="booking-section">
+    <div class="form-container">
+      <h2 style="text-align: center; margin-bottom: 25px;">Book Automotive Shoot</h2>
+      <form action="https://formspree.io/f/mkodbawg" method="POST">
+        <input type="hidden" name="service" value="Automotive" />
+        <div class="form-group"><label for="name">Your Name</label><input type="text" name="name" placeholder="John Doe" required /></div>
+        <div class="form-group"><label for="email">Email Address</label><input type="email" name="email" placeholder="john@example.com" required /></div>
+        <div class="form-group"><label for="details">Vehicle Year/Make/Model & Shoot Location</label><textarea name="details" rows="4" placeholder="2022 Chevrolet Silverado 2500..."></textarea></div>
+        <button type="submit" class="btn-gold" style="width: 100%;">Submit Request</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col"><h4>MX Market Media</h4><p style="color: var(--text-muted); font-size: 0.85rem;">Denver, CO.</p></div>
+      <div class="footer-col"><h4>Services</h4><a href="real-estate.html">Real Estate</a><a href="automotive.html">Automotive</a><a href="events.html">Events</a><a href="marketing.html">Marketing</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="gear.html">Gear</a></div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 MX Market Media.</div>
+  </footer>
 </body>
 </html>
