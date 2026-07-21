@@ -558,3 +558,48 @@ footer {
   .lightbox-next { right: 10px; padding: 10px 15px; font-size: 18px; }
   .close-lightbox { top: 15px; right: 20px; font-size: 35px; }
 }
+
+/* ==========================================
+   TESTIMONIAL SECTION
+   ========================================== */
+.testimonial-section {
+  padding: 100px 5%;
+  background: var(--bg-dark);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  text-align: center;
+}
+
+.stars {
+  color: var(--accent-gold);
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: var(--text-main);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  font-weight: 700;
+  color: #FFF;
+  display: block;
+}
