@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Digital Marketing | Mx Market Media</title>
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
   <header>
@@ -32,6 +32,27 @@
     <p>High converting social campaigns, promotional reels, and brand commercials built for local Colorado businesses.</p>
   </section>
 
+  <!-- Photo Portfolio Gallery -->
+  <section class="content-section">
+    <h2 class="section-title">Commercial Campaigns</h2>
+    <div class="gallery-grid">
+      <div class="gallery-card"><img src="images/marketing-1.jpg" alt="Commercial Shoot 1" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800'" /></div>
+      <div class="gallery-card"><img src="images/marketing-2.jpg" alt="Commercial Shoot 2" onerror="this.src='https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800'" /></div>
+      <div class="gallery-card"><img src="images/marketing-3.jpg" alt="Commercial Shoot 3" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800'" /></div>
+      <div class="gallery-card"><img src="images/marketing-4.jpg" alt="Commercial Shoot 4" onerror="this.src='https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800'" /></div>
+      <div class="gallery-card"><img src="images/marketing-5.jpg" alt="Commercial Shoot 5" onerror="this.src='https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800'" /></div>
+      <div class="gallery-card"><img src="images/marketing-6.jpg" alt="Commercial Shoot 6" onerror="this.src='https://images.unsplash.com/photo-1542744094-3a317272018a?w=800'" /></div>
+    </div>
+  </section>
+
+  <!-- Hidden Lightbox Structure -->
+  <div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <button class="lightbox-prev">&#10094;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="Gallery Fullscreen">
+    <button class="lightbox-next">&#10095;</button>
+  </div>
+
   <section class="content-section" style="padding-top: 0;">
     <div class="info-card">
       <h3>Custom Brand Packages</h3>
@@ -58,7 +79,8 @@
       <div class="footer-col"><h4>Services</h4><a href="real-estate.html">Real Estate</a><a href="automotive.html">Automotive</a><a href="events.html">Events</a><a href="marketing.html">Marketing</a></div>
       <div class="footer-col">
         <h4>Contact & Booking</h4>
-        <a href="MatthewFudala10623@gmail.com">Email: MatthewFudala10623@gmail.com</a>
+        <!-- Also quickly added the "mailto:" to your email link here so clicking it opens up the email app! -->
+        <a href="mailto:MatthewFudala10623@gmail.com">Email: MatthewFudala10623@gmail.com</a>
         <a href="tel:+1 (720) 745-9644">Phone: +1 (720) 745-9644</a>
         <a href="#booking" style="color: var(--accent-gold) !important; font-weight: 600; margin-top: 5px;">Book A Shoot ➔</a>
       </div>
@@ -68,13 +90,56 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Dropdown logic
       const drop = document.getElementById('servicesDropdown');
       if (drop) {
-        drop.addEventListener('click', (e) => {
-          drop.classList.toggle('active');
-          e.stopPropagation();
-        });
+        drop.addEventListener('click', (e) => { drop.classList.toggle('active'); e.stopPropagation(); });
         document.addEventListener('click', () => drop.classList.remove('active'));
+      }
+
+      // Lightbox Logic
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const images = document.querySelectorAll('.gallery-card img');
+      let currentIndex = 0;
+
+      if(lightbox && images.length > 0) {
+        images.forEach((img, index) => {
+          img.addEventListener('click', () => {
+            currentIndex = index;
+            lightboxImg.src = images[currentIndex].src;
+            lightbox.classList.add('active');
+          });
+        });
+
+        const closeBtn = document.querySelector('.close-lightbox');
+        const prevBtn = document.querySelector('.lightbox-prev');
+        const nextBtn = document.querySelector('.lightbox-next');
+
+        closeBtn.addEventListener('click', () => lightbox.classList.remove('active'));
+        
+        prevBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+          lightboxImg.src = images[currentIndex].src;
+        });
+        
+        nextBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+          lightboxImg.src = images[currentIndex].src;
+        });
+
+        // Close when clicking outside image
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) lightbox.classList.remove('active');
+        });
+
+        // Keyboard arrow support
+        document.addEventListener('keydown', (e) => {
+          if (!lightbox.classList.contains('active')) return;
+          if (e.key === 'Escape') lightbox.classList.remove('active');
+          if (e.key === 'ArrowLeft') prevBtn.click();
+          if (e.key === 'ArrowRight') nextBtn.click();
+        });
       }
     });
   </script>
