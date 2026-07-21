@@ -1,31 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About | MX Market Media</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Founder | MX Market Media</title>
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
-  <nav>
-    <div class="logo"><img src="images/logo.png" alt="MX Market Media Logo"></div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="gear.html">Gear</a>
-    </div>
-  </nav>
 
-  <section class="container about-content">
-    <h2>About MX Market Media</h2>
-    <p>Based in Denver, Colorado, MX Market Media LLC is a full-service media production and marketing agency. Founded by Matthew Fudalla, our mission is to elevate brand presence through cinematic photography, video, and targeted advertising campaigns.</p>
-    <p>Our team blends creative vision with cutting-edge technology, from Sony Alpha & Canon cinema optics to DaVinci Resolve color grading, ensuring every project feels (and looks) premium.</p>
-    <a href="index.html" class="back-btn">&larr; Back to Home</a>
+  <header>
+    <a href="index.html">
+      <img src="images/logo.png" alt="MX Market Media" class="site-logo" onerror="this.onerror=null; this.src='images/logo.webp';" />
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <span class="dropbtn">Services ▾</span>
+        <div class="dropdown-content">
+          <a href="real-estate.html">Real Estate</a>
+          <a href="automotive.html">Automotive</a>
+          <a href="events.html">Events</a>
+          <a href="marketing.html">Marketing</a>
+        </div>
+      </div>
+      <a href="about.html" class="active">About</a>
+      <a href="gear.html">Gear</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <h1>About MX Market Media</h1>
+    <p>Cinema-grade storytelling, technical precision, and high-volume media delivery tailored for Denver, Colorado.</p>
+  </section>
+
+  <section class="content-section">
+    <div class="info-card" style="margin-bottom: 30px;">
+      <h3>Our Vision & Standards</h3>
+      <p style="color: var(--text-muted); margin-bottom: 15px;">
+        MX Market Media was founded to deliver modern, aggressive, high-converting visual media across Denver and Colorado's commercial markets. We specialize in bringing true cinema-grade production optics and color science into industries that demand visual authority.
+      </p>
+      <p style="color: var(--text-muted);">
+        Whether capturing luxury real estate listings, high-speed automotive feature films, or large-scale private events, our focus remains absolute: clean glass, sharp audio, and rapid turnaround times.
+      </p>
+    </div>
+  </section>
+
+  <section id="booking" class="booking-section">
+    <div class="form-container">
+      <h2 style="text-align: center; margin-bottom: 25px;">Start Your Project</h2>
+      <form action="https://formspree.io/f/mkodbawg" method="POST">
+        <div class="form-group">
+          <label for="service">Select Service</label>
+          <select id="service" name="service" required>
+            <option value="Real Estate">Real Estate Media</option>
+            <option value="Automotive">Automotive Media</option>
+            <option value="Event Coverage">Event Coverage</option>
+            <option value="Commercial Marketing">Commercial / Brand</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="John Doe" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="john@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="details">Project Details / Location</label>
+          <textarea id="details" name="details" rows="4" placeholder="Tell us about your timeline or location..."></textarea>
+        </div>
+        <button type="submit" class="btn-gold" style="width: 100%;">Submit Request</button>
+      </form>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2023 MX Market Media LLC | Denver, CO</p>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>MX Market Media</h4>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">High-end commercial media agency based in Denver, Colorado.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="real-estate.html">Real Estate</a>
+        <a href="automotive.html">Automotive</a>
+        <a href="events.html">Events</a>
+        <a href="marketing.html">Marketing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Founder</a>
+        <a href="gear.html">Production Arsenal</a>
+        <a href="#booking">Book A Shoot</a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 MX Market Media. All rights reserved.</div>
   </footer>
+
 </body>
 </html>
