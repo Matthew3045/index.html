@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Real Estate Media | MX Market Media</title>
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
   <header>
@@ -45,6 +45,14 @@
     </div>
   </section>
 
+  <!-- Hidden Lightbox Structure -->
+  <div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <button class="lightbox-prev">&#10094;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="Gallery Fullscreen">
+    <button class="lightbox-next">&#10095;</button>
+  </div>
+
   <section class="content-section" style="padding-top: 0;">
     <div class="info-card">
       <h3>Packages & Standard Pricing</h3>
@@ -83,13 +91,56 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Dropdown logic
       const drop = document.getElementById('servicesDropdown');
       if (drop) {
-        drop.addEventListener('click', (e) => {
-          drop.classList.toggle('active');
-          e.stopPropagation();
-        });
+        drop.addEventListener('click', (e) => { drop.classList.toggle('active'); e.stopPropagation(); });
         document.addEventListener('click', () => drop.classList.remove('active'));
+      }
+
+      // Lightbox Logic
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const images = document.querySelectorAll('.gallery-card img');
+      let currentIndex = 0;
+
+      if(lightbox && images.length > 0) {
+        images.forEach((img, index) => {
+          img.addEventListener('click', () => {
+            currentIndex = index;
+            lightboxImg.src = images[currentIndex].src;
+            lightbox.classList.add('active');
+          });
+        });
+
+        const closeBtn = document.querySelector('.close-lightbox');
+        const prevBtn = document.querySelector('.lightbox-prev');
+        const nextBtn = document.querySelector('.lightbox-next');
+
+        closeBtn.addEventListener('click', () => lightbox.classList.remove('active'));
+        
+        prevBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+          lightboxImg.src = images[currentIndex].src;
+        });
+        
+        nextBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+          lightboxImg.src = images[currentIndex].src;
+        });
+
+        // Close when clicking outside image
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) lightbox.classList.remove('active');
+        });
+
+        // Keyboard arrow support
+        document.addEventListener('keydown', (e) => {
+          if (!lightbox.classList.contains('active')) return;
+          if (e.key === 'Escape') lightbox.classList.remove('active');
+          if (e.key === 'ArrowLeft') prevBtn.click();
+          if (e.key === 'ArrowRight') nextBtn.click();
+        });
       }
     });
   </script>
