@@ -25,14 +25,13 @@ body {
   line-height: 1.6;
 }
 
-/* Kills any browser default purple hyperlink text */
 a, a:visited {
   color: var(--text-main);
   text-decoration: none;
 }
 
 /* ==========================================
-   HEADER & DROPDOWN NAVIGATION (WITH FADE)
+   HEADER & DROPDOWN NAVIGATION 
    ========================================== */
 header {
   position: fixed;
@@ -48,7 +47,6 @@ header {
   border-bottom: none !important;
 }
 
-/* THE MAGIC FADE: Dialed down to a gentle 6px blur so it's easy on the eyes */
 header::before {
   content: "";
   position: absolute;
@@ -63,7 +61,6 @@ header::before {
   mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
 }
 
-/* Increased Logo Size */
 .site-logo {
   height: 85px; 
   width: auto;
@@ -100,7 +97,6 @@ nav a:hover, nav a.active, .dropdown:hover .dropbtn, .dropdown.active .dropbtn {
   text-shadow: 0 0 10px var(--gold-glow);
 }
 
-/* Vertical Dropdown Menu */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -276,6 +272,7 @@ nav a:hover, nav a.active, .dropdown:hover .dropbtn, .dropdown.active .dropbtn {
   background: var(--card-bg);
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* Indicates it can be clicked */
 }
 
 .gallery-card img {
@@ -462,6 +459,87 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* ==========================================
+   LIGHTBOX OVERLAY (FULL SCREEN GALLERY)
+   ========================================== */
+.lightbox {
+  display: none; 
+  position: fixed; 
+  z-index: 100000; 
+  padding-top: 80px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: hidden; 
+  background-color: rgba(5, 5, 7, 0.96); 
+  backdrop-filter: blur(15px);
+}
+
+.lightbox-content {
+  position: relative;
+  margin: auto;
+  display: block;
+  width: 90%;
+  max-width: 1100px;
+  max-height: 80vh;
+  object-fit: contain;
+  animation: zoomIn 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.8);
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0.95); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  color: #f1f1f1;
+  font-size: 45px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 100001;
+}
+
+.lightbox-close:hover {
+  color: var(--accent-gold);
+}
+
+.lightbox-prev, .lightbox-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 20px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 35px;
+  transition: 0.3s ease;
+  border-radius: 0 5px 5px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.lightbox-next {
+  right: 15px;
+  border-radius: 5px 0 0 5px;
+}
+
+.lightbox-prev {
+  left: 15px;
+}
+
+.lightbox-prev:hover, .lightbox-next:hover {
+  background-color: var(--accent-gold);
+  color: #000;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   header { padding: 14px 5%; }
@@ -470,4 +548,6 @@ footer {
   .site-logo { height: 60px; } 
   .page-hero { padding: 150px 5% 50px; }
   .form-container { padding: 25px; }
+  .lightbox-prev, .lightbox-next { font-size: 20px; padding: 12px; }
+  .lightbox-close { top: 15px; right: 20px; font-size: 35px; }
 }
