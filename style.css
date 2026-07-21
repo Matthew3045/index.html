@@ -548,6 +548,12 @@ footer {
   .site-logo { height: 60px; } 
   .page-hero { padding: 150px 5% 50px; }
   .form-container { padding: 25px; }
+  
+  /* NEW: This fixes the image/text cut-off on mobile */
+  .service-card {
+    height: 250px !important; 
+  }
+  
   .lightbox-prev { left: 10px; padding: 10px 15px; font-size: 18px; }
   .lightbox-next { right: 10px; padding: 10px 15px; font-size: 18px; }
   .close-lightbox { top: 15px; right: 20px; font-size: 35px; }
