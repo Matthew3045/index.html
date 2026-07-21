@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Event Coverage | MX Market Media</title>
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
 <body>
   <header>
@@ -32,9 +32,22 @@
     <p>Comprehensive event media, wireless multi-channel audio, off-camera lighting, and highlight reels.</p>
   </section>
 
+  <!-- Photo Portfolio Gallery -->
   <section class="content-section">
+    <h2 class="section-title">Event Media Showcase</h2>
+    <div class="gallery-grid">
+      <div class="gallery-card"><img src="images/events-1.jpg" alt="Event Shoot 1" onerror="this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?w=800'" /></div>
+      <div class="gallery-card"><img src="images/events-2.jpg" alt="Event Shoot 2" onerror="this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800'" /></div>
+      <div class="gallery-card"><img src="images/events-3.jpg" alt="Event Shoot 3" onerror="this.src='https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800'" /></div>
+      <div class="gallery-card"><img src="images/events-4.jpg" alt="Event Shoot 4" onerror="this.src='https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800'" /></div>
+      <div class="gallery-card"><img src="images/events-5.jpg" alt="Event Shoot 5" onerror="this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800'" /></div>
+      <div class="gallery-card"><img src="images/events-6.jpg" alt="Event Shoot 6" onerror="this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800'" /></div>
+    </div>
+  </section>
+
+  <section class="content-section" style="padding-top: 0;">
     <div class="info-card">
-      <h3>Event Rates</h3>
+      <h3>Event Coverage Packages</h3>
       <p style="color: var(--text-muted); margin-bottom: 10px;">• <strong>Standard Coverage</strong>: $450 (2-3 hours coverage, 50 retouched photos + highlight video).</p>
       <p style="color: var(--text-muted);">• <strong>Full Day Coverage</strong>: $850 (Up to 8 hours, 80 photos, 1-minute cinematic reel, includes full wireless mics, lighting, & drone support).</p>
     </div>
@@ -42,7 +55,7 @@
 
   <section id="booking" class="booking-section">
     <div class="form-container">
-      <h2 style="text-align: center; margin-bottom: 25px;">Book Event Coverage</h2>
+      <h2 style="text-align: center; margin-bottom: 25px; color: #FFF;">Book Event Coverage</h2>
       <form action="https://formspree.io/f/mkodbawg" method="POST">
         <input type="hidden" name="service" value="Events" />
         <div class="form-group"><label for="name">Your Name</label><input type="text" name="name" placeholder="John Doe" required /></div>
@@ -55,9 +68,14 @@
 
   <footer>
     <div class="footer-grid">
-      <div class="footer-col"><h4>MX Market Media</h4><p style="color: var(--text-muted); font-size: 0.85rem;">Denver, CO.</p></div>
+      <div class="footer-col"><h4>MX Market Media</h4><p>Denver, CO.</p></div>
       <div class="footer-col"><h4>Services</h4><a href="real-estate.html">Real Estate</a><a href="automotive.html">Automotive</a><a href="events.html">Events</a><a href="marketing.html">Marketing</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="gear.html">Gear</a></div>
+      <div class="footer-col">
+        <h4>Contact & Booking</h4>
+        <a href="mailto:info@mxmarketmedia.com">Email: info@mxmarketmedia.com</a>
+        <a href="tel:7205550199">Phone: (720) 555-0199</a>
+        <a href="#booking" style="color: var(--accent-gold) !important; font-weight: 600; margin-top: 5px;">Book A Shoot ➔</a>
+      </div>
     </div>
     <div class="footer-bottom">&copy; 2026 MX Market Media.</div>
   </footer>
