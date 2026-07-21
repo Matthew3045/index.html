@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Automotive Media | MX Market Media</title>
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
 <body>
   <header>
@@ -32,9 +32,22 @@
     <p>Rolling tracking shots, high-speed cinema video, and dynamic photo sets for vehicle owners and dealerships.</p>
   </section>
 
+  <!-- Photo Portfolio Gallery -->
   <section class="content-section">
+    <h2 class="section-title">Automotive Portfolio</h2>
+    <div class="gallery-grid">
+      <div class="gallery-card"><img src="images/automotive-1.jpg" alt="Automotive Shoot 1" onerror="this.src='https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800'" /></div>
+      <div class="gallery-card"><img src="images/automotive-2.jpg" alt="Automotive Shoot 2" onerror="this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800'" /></div>
+      <div class="gallery-card"><img src="images/automotive-3.jpg" alt="Automotive Shoot 3" onerror="this.src='https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?w=800'" /></div>
+      <div class="gallery-card"><img src="images/automotive-4.jpg" alt="Automotive Shoot 4" onerror="this.src='https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800'" /></div>
+      <div class="gallery-card"><img src="images/automotive-5.jpg" alt="Automotive Shoot 5" onerror="this.src='https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800'" /></div>
+      <div class="gallery-card"><img src="images/automotive-6.jpg" alt="Automotive Shoot 6" onerror="this.src='https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800'" /></div>
+    </div>
+  </section>
+
+  <section class="content-section" style="padding-top: 0;">
     <div class="info-card">
-      <h3>Automotive Pricing</h3>
+      <h3>Automotive Rates</h3>
       <p style="color: var(--text-muted); margin-bottom: 10px;">• <strong>Photo Package</strong>: $80 (10 fully retouched photos).</p>
       <p style="color: var(--text-muted);">• <strong>Photo + Video Package</strong>: $200 (10 retouched photos + 4K rolling & static video edit).</p>
     </div>
@@ -42,7 +55,7 @@
 
   <section id="booking" class="booking-section">
     <div class="form-container">
-      <h2 style="text-align: center; margin-bottom: 25px;">Book Automotive Shoot</h2>
+      <h2 style="text-align: center; margin-bottom: 25px; color: #FFF;">Book Automotive Shoot</h2>
       <form action="https://formspree.io/f/mkodbawg" method="POST">
         <input type="hidden" name="service" value="Automotive" />
         <div class="form-group"><label for="name">Your Name</label><input type="text" name="name" placeholder="John Doe" required /></div>
@@ -55,9 +68,14 @@
 
   <footer>
     <div class="footer-grid">
-      <div class="footer-col"><h4>MX Market Media</h4><p style="color: var(--text-muted); font-size: 0.85rem;">Denver, CO.</p></div>
+      <div class="footer-col"><h4>MX Market Media</h4><p>Denver, CO.</p></div>
       <div class="footer-col"><h4>Services</h4><a href="real-estate.html">Real Estate</a><a href="automotive.html">Automotive</a><a href="events.html">Events</a><a href="marketing.html">Marketing</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="gear.html">Gear</a></div>
+      <div class="footer-col">
+        <h4>Contact & Booking</h4>
+        <a href="mailto:info@mxmarketmedia.com">Email: info@mxmarketmedia.com</a>
+        <a href="tel:7205550199">Phone: (720) 555-0199</a>
+        <a href="#booking" style="color: var(--accent-gold) !important; font-weight: 600; margin-top: 5px;">Book A Shoot ➔</a>
+      </div>
     </div>
     <div class="footer-bottom">&copy; 2026 MX Market Media.</div>
   </footer>
