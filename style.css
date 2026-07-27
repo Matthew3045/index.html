@@ -616,7 +616,7 @@ footer {
    ========================================== */
 .floating-booking-btn {
   position: fixed;
-  bottom: 30px;
+  bottom: 80px;
   right: 20px;
   z-index: 9999;
   width: 55px;
