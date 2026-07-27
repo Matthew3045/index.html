@@ -612,15 +612,44 @@ footer {
 
 
 
-/* --- Dropdown Click Fix --- */
+
+
+
+
+
+
+
+
+
+
+
+/* Fix button styling for the new dropdown triggers */
+.dropbtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+/* Ensure the header and dropdowns are always on top */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000; /* Increased z-index */
+  padding-top: calc(20px + env(safe-area-inset-top));
+}
+
 .dropdown {
   position: relative;
   display: inline-block;
-  z-index: 10001; /* Higher than header and hero */
+  z-index: 10001;
 }
 
-.dropdown-content {
-  z-index: 10002; /* Ensures it's always the top layer */
+/* Close dropdown if clicking elsewhere */
+body {
+  cursor: pointer;
 }
 
 
