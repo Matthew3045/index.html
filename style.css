@@ -617,7 +617,7 @@ footer {
 .floating-booking-btn {
   position: fixed;
   /* This uses 'calc' to add extra space for iPhone home bars */
-  bottom: calc(50px + env(safe-area-inset-bottom)); 
+  bottom: calc(30px + env(safe-area-inset-bottom)); 
   right: 20px;
   z-index: 9999;
   width: 55px;
