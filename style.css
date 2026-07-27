@@ -32,7 +32,7 @@ a, a:visited {
 }
 
 /* ==========================================
-   HEADER & DROPDOWN NAVIGATION (FIXED FOR IPHONE)
+   HEADER & DROPDOWN NAVIGATION (FIXED)
    ========================================== */
 header {
   position: fixed;
@@ -44,14 +44,13 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 5%;
-  /* This forces the header to respect the iPhone camera notch */
-  padding-top: env(safe-area-inset-top);
+  /* Fix for iPhone Camera Cutout */
+  padding-top: calc(20px + env(safe-area-inset-top));
   background: transparent !important;
-  border-bottom: none !important;
-  pointer-events: auto; /* Ensures clicks pass through to nav */
+  pointer-events: auto; 
 }
 
-/* Updated header background to cover the whole top area including the notch */
+/* This creates the consistent blur top-to-bottom */
 header::before {
   content: "";
   position: absolute;
@@ -59,42 +58,17 @@ header::before {
   left: 0;
   width: 100%;
   height: 100%; 
-  /* Cover the notch area */
-  padding-top: env(safe-area-inset-top);
   z-index: -1;
-  -webkit-backdrop-filter: blur(6px) saturate(110%);
-  backdrop-filter: blur(6px) saturate(110%);
-  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  /* Prevents the header from blocking clicks */
+  pointer-events: none; 
 }
 
-/* THE MAGIC FADE: Dialed down to a gentle 6px blur so it's easy on the eyes */
-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 140%; 
-  z-index: -1;
-  -webkit-backdrop-filter: blur(6px) saturate(110%);
-  backdrop-filter: blur(6px) saturate(110%);
-  -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
-}
-
-/* Increased Logo Size */
 .site-logo {
-  height: 85px; 
+  height: 60px; /* Reduced slightly to fit better on mobile */
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 8px rgba(0,0,0,0.8));
-  transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-.site-logo:hover {
-  filter: drop-shadow(0 0 12px var(--gold-glow));
-  transform: scale(1.02);
 }
 
 nav {
@@ -107,39 +81,31 @@ nav a, .dropbtn {
   color: rgba(255, 255, 255, 0.88) !important;
   font-size: 0.95rem;
   font-weight: 500;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
-  transition: all 0.2s ease;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
-nav a:hover, nav a.active, .dropdown:hover .dropbtn, .dropdown.active .dropbtn {
-  color: var(--accent-gold) !important;
-  text-shadow: 0 0 10px var(--gold-glow);
-}
-
-/* Vertical Dropdown Menu */
 .dropdown {
   position: relative;
   display: inline-block;
+  pointer-events: auto; /* Ensure dropdown is clickable */
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  top: calc(100% + 15px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(10, 10, 14, 0.98);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   min-width: 200px;
   border: 1px solid var(--glass-border);
   border-radius: 12px;
   padding: 8px 0;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.9), 0 0 20px rgba(255, 215, 0, 0.15);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.9);
   z-index: 10000;
   flex-direction: column;
 }
@@ -148,22 +114,9 @@ nav a:hover, nav a.active, .dropdown:hover .dropbtn, .dropdown.active .dropbtn {
   color: var(--text-main) !important;
   padding: 12px 20px;
   display: block;
-  font-size: 0.9rem;
-  text-align: left;
-  white-space: nowrap;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
-.dropdown-content a:last-child {
-  border-bottom: none;
-}
-
-.dropdown-content a:hover {
-  background: rgba(255, 215, 0, 0.15);
-  color: var(--accent-gold) !important;
-}
-
-.dropdown:hover .dropdown-content,
+.dropdown:hover .dropdown-content, 
 .dropdown.active .dropdown-content {
   display: flex;
 }
