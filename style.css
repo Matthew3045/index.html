@@ -611,51 +611,32 @@ footer {
    UPGRADES: ACTIVE TAB, FLOATING ICON & ANIMATIONS
    ========================================== */
 
-/* Dynamic Active Link Highlight */
-.active-link {
-  color: var(--accent-gold) !important;
-  text-shadow: 0 0 12px var(--gold-glow) !important;
-}
-
-/* Update this specific block in style.css */
+/* ==========================================
+   STATIC FLOATING BOOKING ICON
+   ========================================== */
 .floating-booking-btn {
   position: fixed;
-  bottom: 80px; /* Changed from 30px to 80px to prevent cut-off */
-  right: 20px;  /* Slightly closer to the edge for better reach */
+  bottom: 30px;
+  right: 20px;
   z-index: 9999;
-  width: 50px;  /* Made it slightly smaller */
-  height: 50px;
-  background-color: #FFD700;
+  width: 55px;
+  height: 55px;
+  /* Semi-transparent gold using RGBA for the "glass" look */
+  background-color: rgba(255, 215, 0, 0.85); 
+  backdrop-filter: blur(4px);
   color: #000;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
-  transition: opacity 0.5s ease, transform 0.3s ease;
-}
-
-.floating-booking-btn.hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(20px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .floating-booking-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
-}
-
-/* Premium Scroll Animation */
-.fade-in-hidden {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.fade-in-visible {
-  opacity: 1;
-  transform: translateY(0);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+  background-color: rgba(255, 215, 0, 1); /* Goes solid gold on hover */
 }
 
