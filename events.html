@@ -46,7 +46,26 @@
   <section class="content-section">
     <h2 class="section-title">Event Media Showcase</h2>
     <div class="gallery-grid">
-      <div class="gallery-card"><img src="images/events-1.jpg" alt="Event Shoot 1" onerror="this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?w=800'" /></div>
+     <!-- Replace your first gallery-card with this: -->
+<div class="slider-container">
+  <!-- Bottom Layer (Raw) -->
+  <img src="images/events-1-raw.jpg" class="slider-img-layer" alt="Raw" />
+  <!-- Top Layer (Edited) -->
+  <img src="images/events-1.jpg" class="slider-img-layer slider-img-top" id="eventSliderTop" alt="Edited" />
+  <!-- Invisible Input to control the slide -->
+  <input type="range" class="slider-input" min="0" max="100" value="50" oninput="updateEventSlider(this.value)" />
+  <!-- Visible Handle -->
+  <div class="slider-handle" id="eventSliderHandle"></div>
+</div>
+
+<script>
+  function updateEventSlider(val) {
+    const topImg = document.getElementById('eventSliderTop');
+    const handle = document.getElementById('eventSliderHandle');
+    topImg.style.width = val + '%';
+    handle.style.left = val + '%';
+  }
+</script>
       <div class="gallery-card"><img src="images/events-2.jpg" alt="Event Shoot 2" onerror="this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800'" /></div>
       <div class="gallery-card"><img src="images/events-3.jpg" alt="Event Shoot 3" onerror="this.src='https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800'" /></div>
       <div class="gallery-card"><img src="images/events-4.jpg" alt="Event Shoot 4" onerror="this.src='https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800'" /></div>
