@@ -616,12 +616,12 @@ footer {
    ========================================== */
 .floating-booking-btn {
   position: fixed;
-  bottom: 80px;
+  /* This uses 'calc' to add extra space for iPhone home bars */
+  bottom: calc(80px + env(safe-area-inset-bottom)); 
   right: 20px;
   z-index: 9999;
   width: 55px;
   height: 55px;
-  /* Semi-transparent gold using RGBA for the "glass" look */
   background-color: rgba(255, 215, 0, 0.85); 
   backdrop-filter: blur(4px);
   color: #000;
@@ -632,11 +632,5 @@ footer {
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.floating-booking-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
-  background-color: rgba(255, 215, 0, 1); /* Goes solid gold on hover */
 }
 
