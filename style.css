@@ -655,3 +655,19 @@ footer {
      border: 1px solid rgba(255, 255, 255, 0.3);;
 }
 
+
+
+
+
+/* --- Dropdown Click Fix --- */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 10001; /* Higher than header and hero */
+}
+
+.dropdown-content {
+  z-index: 10002; /* Ensures it's always the top layer */
+}
+
+
