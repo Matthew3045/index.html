@@ -208,18 +208,76 @@
     <div class="footer-bottom">&copy; 2026 Mx Market Media. All rights reserved. | <a href="terms.html" style="color: var(--text-muted, #aaa); text-decoration: underline;">Terms</a></div>
   </footer>
 
+    <!-- Custom Floating Booking Icon -->
+  <div class="floating-booking-btn" id="floatingBtn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/matthewfudala10623/booking'}); return false;">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+      <line x1="16" y1="2" x2="16" y2="6"></line>
+      <line x1="8" y1="2" x2="8" y2="6"></line>
+      <line x1="3" y1="10" x2="21" y2="10"></line>
+    </svg>
+  </div>
+
+  <!-- Calendly Popup Script -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <!-- Master Interactive Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const drop = document.getElementById('servicesDropdown');
-      if (drop) {
+      
+      // 1. Highlight Active Tab Automatically
+      const currentPath = window.location.pathname.split("/").pop() || 'index.html';
+      document.querySelectorAll('nav a, .dropdown-content a').forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+          link.classList.add('active-link');
+          // If inside a dropdown, highlight the parent dropdown button too
+          const parentDropdown = link.closest('.dropdown');
+          if (parentDropdown) {
+            parentDropdown.querySelector('.dropbtn').classList.add('active-link');
+          }
+        }
+      });
+
+      // 2. Premium Fade-In Scroll Animation for Cards
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      document.querySelectorAll('.service-card, .testimonial-card').forEach(card => {
+        card.classList.add('fade-in-hidden');
+        observer.observe(card);
+      });
+
+      // 3. Dropdown Logic
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(drop => {
         drop.addEventListener('click', (e) => {
+          dropdowns.forEach(d => { if(d !== drop) d.classList.remove('active'); });
           drop.classList.toggle('active');
           e.stopPropagation();
         });
-        document.addEventListener('click', () => drop.classList.remove('active'));
+      });
+      document.addEventListener('click', () => dropdowns.forEach(d => d.classList.remove('active')));
+
+      // 4. Scroll-Hide Booking Button
+      const btn = document.getElementById('floatingBtn');
+      if (btn) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 200) {
+            btn.classList.add('hidden');
+          } else {
+            btn.classList.remove('hidden');
+          }
+        });
       }
     });
   </script>
+
 </body>
 </html>
 
