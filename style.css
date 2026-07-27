@@ -617,14 +617,14 @@ footer {
   text-shadow: 0 0 12px var(--gold-glow) !important;
 }
 
-/* Floating Booking Icon */
+/* Update this specific block in style.css */
 .floating-booking-btn {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 80px; /* Changed from 30px to 80px to prevent cut-off */
+  right: 20px;  /* Slightly closer to the edge for better reach */
   z-index: 9999;
-  width: 60px;
-  height: 60px;
+  width: 50px;  /* Made it slightly smaller */
+  height: 50px;
   background-color: #FFD700;
   color: #000;
   border-radius: 50%;
@@ -634,7 +634,6 @@ footer {
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
   transition: opacity 0.5s ease, transform 0.3s ease;
-  opacity: 1;
 }
 
 .floating-booking-btn.hidden {
