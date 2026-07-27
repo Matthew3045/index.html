@@ -228,14 +228,18 @@ He didn't just film videos he helped me get started with my gym content and gave
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Highlight Active Tab
-      const currentPath = window.location.pathname.split("/").pop() || 'index.html';
-      document.querySelectorAll('nav a').forEach(link => {
-        if (link.getAttribute('href') === currentPath) link.classList.add('active-link');
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(function(openDropdown) {
+        if (openDropdown.classList.contains('active')) {
+          openDropdown.classList.remove('active');
+        }
       });
-    });
-  </script>
+    }
+  });
+</script>
 
 </body>
 </html>
