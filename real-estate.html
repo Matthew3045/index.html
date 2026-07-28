@@ -46,7 +46,19 @@
   <section class="content-section">
     <h2 class="section-title">Recent Real Estate Shoots</h2>
     <div class="gallery-grid">
-      <div class="gallery-card"><img src="images/real-estate-1.jpg" alt="Real Estate Shoot 1" onerror="this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800'" /></div>
+      <!-- Interactive Real Estate Slider -->
+<div class="slider-wrapper" style="height: 280px; border-radius: 16px; overflow: hidden; position: relative;">
+  <img src="images/real-estate-1-raw.jpg" class="slider-img-layer" alt="Raw" />
+  <img src="images/real-estate-1.jpg" class="slider-img-layer slider-img-top" id="reSliderTop" alt="Edited" />
+  <input type="range" class="slider-input" min="0" max="100" value="50" oninput="updateReSlider(this.value)" />
+  <div class="slider-handle" id="reSliderHandle"></div>
+</div>
+<script>
+  function updateReSlider(val) {
+    document.getElementById('reSliderTop').style.width = val + '%';
+    document.getElementById('reSliderHandle').style.left = val + '%';
+  }
+</script>
       <div class="gallery-card"><img src="images/real-estate-2.jpg" alt="Real Estate Shoot 2" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800'" /></div>
       <div class="gallery-card"><img src="images/real-estate-3.jpg" alt="Real Estate Shoot 3" onerror="this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800'" /></div>
       <div class="gallery-card"><img src="images/real-estate-4.jpg" alt="Real Estate Shoot 4" onerror="this.src='https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=800'" /></div>
